@@ -337,12 +337,12 @@ const Expertise = () => {
       icon: <Database className="text-white" size={24} />,
     },
     {
-      title: "Analyse des risques",
+      title: "Analyse des Risques",
       description: "Identification et évaluation des menaces potentielles pour sécuriser la continuité des activités.",
       icon: <AlertTriangle className="text-white" size={24} />,
     },
     {
-      title: "Gestion du changement",
+      title: "Gestion du Changement",
       description: "Accompagnement des collaborateurs et des structures dans l'adoption de nouvelles méthodes et outils.",
       icon: <RefreshCw className="text-white" size={24} />,
     },
@@ -352,7 +352,7 @@ const Expertise = () => {
       icon: <Code className="text-white" size={24} />,
     },
     {
-      title: "Études et conseils",
+      title: "Études et Conseils",
       description: "Aide à la décision pour le choix d'outils numériques adaptés aux besoins réels des entreprises.",
       icon: <Search className="text-white" size={24} />,
     },
