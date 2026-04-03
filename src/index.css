@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-silver-50: #f8f9fa;
+  --color-silver-100: #e9ecef;
+  --color-silver-200: #dee2e6;
+  --color-silver-300: #ced4da;
+  --color-silver-400: #adb5bd;
+  --color-silver-500: #6c757d;
+  --color-silver-600: #495057;
+  --color-silver-700: #343a40;
+  --color-silver-800: #212529;
+  --color-silver-900: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-silver-100 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.silver-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #adb5bd 50%, #6c757d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-border {
+  border: 1px solid rgba(173, 181, 187, 0.2);
+}
+
+.silver-glow {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
