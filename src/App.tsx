@@ -27,10 +27,15 @@ import {
   Zap
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import Blog from "./components/Blog";
+import BlogPost from "./components/BlogPost";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -39,47 +44,56 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "À propos", href: "#about" },
-    { name: "Expertise", href: "#expertise" },
-    { name: "Expérience", href: "#experience" },
-    { name: "Projets", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "À propos", href: isHomePage ? "#about" : "/#about" },
+    { name: "Expertise", href: isHomePage ? "#expertise" : "/#expertise" },
+    { name: "Expérience", href: isHomePage ? "#experience" : "/#experience" },
+    { name: "Projets", href: isHomePage ? "#projects" : "/#projects" },
+    { name: "Blog", href: "/blog", isRoute: true },
+    { name: "Contact", href: isHomePage ? "#contact" : "/#contact" },
   ];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md py-4 border-b border-silver-400/10" : "bg-transparent py-6"}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <motion.a 
-          href="#"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+        <Link 
+          to="/"
           className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity"
         >
           semane<span className="text-silver-400">.</span>
-        </motion.a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link, i) => (
-            <motion.a
+            <motion.div
               key={link.name}
-              href={link.href}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="text-sm font-medium text-silver-300 hover:text-white transition-colors"
             >
-              {link.name}
-            </motion.a>
+              {link.isRoute ? (
+                <Link
+                  to={link.href}
+                  className="text-sm font-medium text-silver-300 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="text-sm font-medium text-silver-300 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </a>
+              )}
+            </motion.div>
           ))}
-          <motion.a
-            href="#contact"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+          <a
+            href={isHomePage ? "#contact" : "/#contact"}
             className="px-5 py-2 bg-white text-black text-sm font-bold rounded-sm hover:bg-silver-200 transition-colors"
           >
             Parlons-en
-          </motion.a>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -99,14 +113,25 @@ const Navbar = () => {
         >
           <div className="px-6 py-8 flex flex-col space-y-6">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                onClick={() => setIsOpen(false)}
-                className="text-lg font-medium text-silver-300"
-              >
-                {link.name}
-              </a>
+              link.isRoute ? (
+                <Link 
+                  key={link.name} 
+                  to={link.href} 
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg font-medium text-silver-300"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg font-medium text-silver-300"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </div>
         </motion.div>
@@ -472,24 +497,18 @@ const Projects = () => {
       title: "Optimisation BPM Logistique",
       description: "Refonte complète des processus de gestion de stock et de distribution pour une réduction des coûts opérationnels de 15%.",
       tags: ["BPMN 2.0", "Lean Six Sigma", "ERP"],
-      link: "#",
-      github: "#",
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Dashboard de Performance IT",
       description: "Conception d'un tableau de bord décisionnel permettant le suivi en temps réel des KPI stratégiques et de la santé des systèmes.",
       tags: ["Power BI", "SQL", "Business Intelligence"],
-      link: "#",
-      github: "#",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Audit de Transformation Digitale",
       description: "Analyse de maturité numérique et définition d'une roadmap stratégique pour la migration vers des solutions Cloud.",
       tags: ["Cloud Strategy", "Audit", "Digital Transformation"],
-      link: "#",
-      github: "#",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
     }
   ];
@@ -540,19 +559,9 @@ const Projects = () => {
                   ))}
                 </div>
                 <h4 className="text-xl font-bold mb-3 text-white">{project.title}</h4>
-                <p className="text-silver-400 text-sm leading-relaxed mb-6">
+                <p className="text-silver-400 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                <div className="flex space-x-4">
-                  <a href={project.link} className="text-white hover:text-silver-400 transition-colors flex items-center text-sm font-bold">
-                    <ExternalLink size={16} className="mr-2" />
-                    Demo
-                  </a>
-                  <a href={project.github} className="text-white hover:text-silver-400 transition-colors flex items-center text-sm font-bold">
-                    <Github size={16} className="mr-2" />
-                    Code
-                  </a>
-                </div>
               </div>
             </motion.div>
           ))}
@@ -622,18 +631,22 @@ const Contact = () => {
 };
 
 const Footer = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
     <footer className="py-12 border-t border-silver-400/10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-silver-500 text-sm">
-        <a href="#" className="font-bold text-silver-100 text-xl tracking-tighter hover:opacity-80 transition-opacity">
+        <Link to="/" className="font-bold text-silver-100 text-xl tracking-tighter hover:opacity-80 transition-opacity">
           semane<span className="text-silver-400">.</span>
-        </a>
+        </Link>
         
-        <div className="flex space-x-8">
-          <a href="#about" className="hover:text-white transition-colors">À propos</a>
-          <a href="#expertise" className="hover:text-white transition-colors">Expertise</a>
-          <a href="#experience" className="hover:text-white transition-colors">Expérience</a>
-          <a href="#projects" className="hover:text-white transition-colors">Projets</a>
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 md:gap-x-8">
+          <a href={isHomePage ? "#about" : "/#about"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">À propos</a>
+          <a href={isHomePage ? "#expertise" : "/#expertise"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Expertise</a>
+          <a href={isHomePage ? "#experience" : "/#experience"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Expérience</a>
+          <a href={isHomePage ? "#projects" : "/#projects"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Projets</a>
+          <Link to="/blog" className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Blog</Link>
         </div>
         
         <div>
@@ -644,19 +657,31 @@ const Footer = () => {
   );
 };
 
+const Home = () => {
+  return (
+    <main>
+      <Hero />
+      <About />
+      <Expertise />
+      <Experience />
+      <Projects />
+      <Contact />
+    </main>
+  );
+};
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-black selection:bg-white selection:text-black overflow-x-hidden">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Expertise />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-black selection:bg-white selection:text-black overflow-x-hidden">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
