@@ -58,6 +58,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link 
           to="/"
+          onClick={() => {
+            if (window.location.pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
           className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity"
         >
           semane<span className="text-silver-400">.</span>
@@ -638,7 +643,15 @@ const Footer = () => {
   return (
     <footer className="py-12 border-t border-silver-400/10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-silver-500 text-sm">
-        <Link to="/" className="font-bold text-silver-100 text-xl tracking-tighter hover:opacity-80 transition-opacity">
+        <Link 
+          to="/" 
+          onClick={() => {
+            if (window.location.pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="font-bold text-silver-100 text-xl tracking-tighter hover:opacity-80 transition-opacity"
+        >
           semane<span className="text-silver-400">.</span>
         </Link>
         
