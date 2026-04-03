@@ -9,10 +9,12 @@ import {
   ExternalLink, 
   FileText, 
   Github, 
+  Instagram,
   Layers, 
   Linkedin, 
   Mail, 
   Menu, 
+  MessageCircle,
   Monitor, 
   PieChart, 
   RefreshCw,
@@ -580,6 +582,36 @@ const Contact = () => {
             <div className="flex justify-center md:justify-start space-x-6 pt-4">
               <a href="https://cm.linkedin.com/in/emane-steve" className="text-black hover:text-silver-600 transition-colors">
                 <Linkedin size={24} />
+              </a>
+              <a href="https://wa.me/237622186389" className="text-black hover:text-silver-600 transition-colors">
+                <MessageCircle size={24} />
+              </a>
+              <a href="https://www.instagram.com/emane.pro?utm_source=qr&igsh=MWszcGwwNzl0YzNwMA==" className="text-black hover:text-silver-600 transition-colors">
+                <Instagram size={24} />
+              </a>
+              <a href="https://www.tiktok.com/@ing.semane?_r=1&_t=ZS-95E7A1dXcwS" className="text-black hover:text-silver-600 transition-colors">
+                <svg 
+                  viewBox="0 0 24 24" 
+                  width="24" 
+                  height="24" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  fill="none" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
+              </a>
+              <a href="https://x.com/emane_steve" className="text-black hover:text-silver-600 transition-colors">
+                <svg 
+                  viewBox="0 0 24 24" 
+                  width="22" 
+                  height="22" 
+                  fill="currentColor"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
             </div>
           </div>
