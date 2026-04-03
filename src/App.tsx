@@ -30,6 +30,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import Blog from "./components/Blog";
 import BlogPost from "./components/BlogPost";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -673,6 +674,7 @@ const Home = () => {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-black selection:bg-white selection:text-black overflow-x-hidden">
         <Navbar />
         <Routes>
