@@ -4,6 +4,20 @@ import { Link } from "react-router-dom";
 import { blogPosts } from "../data/blogData";
 
 const Blog = () => {
+  const months: { [key: string]: number } = {
+    "Janvier": 0, "Février": 1, "Mars": 2, "Avril": 3, "Mai": 4, "Juin": 5,
+    "Juillet": 6, "Août": 7, "Septembre": 8, "Octobre": 9, "Novembre": 10, "Décembre": 11
+  };
+
+  const parseDate = (dateStr: string) => {
+    const [day, month, year] = dateStr.split(" ");
+    return new Date(parseInt(year), months[month], parseInt(day));
+  };
+
+  const sortedPosts = [...blogPosts].sort((a, b) => 
+    parseDate(b.date).getTime() - parseDate(a.date).getTime()
+  );
+
   return (
     <div className="pt-32 pb-24 min-h-screen bg-black">
       <div className="max-w-7xl mx-auto px-6">
@@ -19,7 +33,7 @@ const Blog = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {blogPosts.map((post, i) => (
+          {sortedPosts.map((post, i) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
