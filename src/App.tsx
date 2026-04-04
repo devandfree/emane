@@ -418,6 +418,12 @@ const Expertise = () => {
 const Experience = () => {
   const experiences = [
     {
+      role: "LIMS Implementer",
+      company: "KB SAP Consulting SARL",
+      period: "Fév. 2026 - Présent",
+      description: "Implémentation et configuration de systèmes de gestion d'informations de laboratoire (LIMS) pour optimiser les flux de travail scientifiques."
+    },
+    {
       role: "IT Business Analyst & BPM Engineer",
       company: "Expertise Indépendante",
       period: "Présent",
@@ -443,7 +449,7 @@ const Experience = () => {
     },
     {
       role: "Stage fin d'études & Stage Professionnel",
-      company: "The German House Cameroon",
+      company: "The German House Cameroon SARL",
       period: "Mars 2021 - Nov. 2021",
       description: "Mise en pratique des compétences d'ingénierie sur des projets concrets et immersion professionnelle en environnement technique."
     },
