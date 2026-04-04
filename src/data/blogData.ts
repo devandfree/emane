@@ -136,5 +136,36 @@ export const blogPosts: BlogPostData[] = [
     author: "Steve Emane",
     category: "Technologie",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 5,
+    title: "Comprendre l’ISO 17025 grâce à un logiciel de gestion de laboratoire",
+    excerpt: "Découvrez comment un LIMS facilite la mise en conformité avec la norme ISO 17025 et garantit la qualité des résultats d'essais et d'étalonnages.",
+    content: `
+      <p>La norme <strong>ISO/CEI 17025</strong> est la référence internationale pour les laboratoires d'étalonnage et d'essais. Elle définit les exigences générales de compétence, d'impartialité et de fonctionnement cohérent. Pour de nombreux laboratoires, la mise en conformité peut sembler complexe, mais l'utilisation d'un <strong>LIMS (Laboratory Information Management System)</strong> simplifie considérablement ce processus.</p>
+      
+      <h3>Les piliers de l'ISO 17025 et le rôle du LIMS</h3>
+      <p>Un logiciel de gestion de laboratoire moderne répond directement aux exigences de la norme à travers plusieurs fonctionnalités clés :</p>
+      <ul>
+        <li><strong>Maîtrise des données et des enregistrements :</strong> L'ISO 17025 exige que toutes les données techniques soient conservées. Le LIMS automatise l'archivage et garantit que les données ne peuvent pas être modifiées sans laisser de trace (Audit Trail).</li>
+        <li><strong>Gestion des équipements :</strong> Le logiciel suit le cycle de vie des instruments, planifie les étalonnages et les maintenances préventives, et empêche l'utilisation d'un appareil non conforme.</li>
+        <li><strong>Compétence du personnel :</strong> Le LIMS permet de gérer les matrices de compétences et de s'assurer que seuls les techniciens qualifiés effectuent des analyses spécifiques.</li>
+        <li><strong>Validation des méthodes :</strong> Les protocoles standardisés sont intégrés au système, garantissant que chaque essai suit strictement la méthode validée.</li>
+      </ul>
+
+      <h3>Amélioration continue et gestion des risques</h3>
+      <p>L'édition 2017 de la norme met l'accent sur l'approche par les risques. Un LIMS facilite cette gestion en :</p>
+      <ul>
+        <li><strong>Identifiant les non-conformités :</strong> En cas d'anomalie, le système génère automatiquement des alertes et permet de suivre les actions correctives (CAPA).</li>
+        <li><strong>Analysant les tendances :</strong> Les outils de reporting intégrés permettent de surveiller la validité des résultats sur le long terme (cartes de contrôle).</li>
+      </ul>
+
+      <p>En conclusion, l'ISO 17025 n'est pas seulement une contrainte réglementaire, c'est un gage de confiance pour vos clients. En intégrant ces exigences au cœur de votre <strong>LIMS</strong>, vous transformez la conformité en un levier d'excellence opérationnelle au quotidien.</p>
+    `,
+    date: "04 Avril 2026",
+    readTime: "6 min",
+    author: "Steve Emane",
+    category: "Qualité",
+    image: "https://www.hebergeur-image.com/upload/143.105.152.140-69d0b54aeddc0.jpg"
   }
 ];
