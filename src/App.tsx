@@ -322,21 +322,6 @@ const Expertise = () => {
       icon: <Cpu className="text-white" size={24} />,
     },
     {
-      title: "Analyse de Données",
-      description: "Fiabilisation de la prise de décision grâce à l'exploitation structurée de la data.",
-      icon: <PieChart className="text-white" size={24} />,
-    },
-    {
-      title: "Stratégie d'Entreprise",
-      description: "Optimisation des performances et alignement des initiatives avec la vision de la direction.",
-      icon: <ShieldCheck className="text-white" size={24} />,
-    },
-    {
-      title: "Génie Informatique",
-      description: "Base technique solide permettant de comprendre et de structurer des architectures complexes.",
-      icon: <Database className="text-white" size={24} />,
-    },
-    {
       title: "Analyse des Risques",
       description: "Identification et évaluation des menaces potentielles pour sécuriser la continuité des activités.",
       icon: <AlertTriangle className="text-white" size={24} />,
@@ -346,26 +331,6 @@ const Expertise = () => {
       description: "Accompagnement des collaborateurs et des structures dans l'adoption de nouvelles méthodes et outils.",
       icon: <RefreshCw className="text-white" size={24} />,
     },
-    {
-      title: "Développement Web",
-      description: "Création de sites web et micro-apps (métier et SaaS) pour digitaliser vos services.",
-      icon: <Code className="text-white" size={24} />,
-    },
-    {
-      title: "Études et Conseils",
-      description: "Aide à la décision pour le choix d'outils numériques adaptés aux besoins réels des entreprises.",
-      icon: <Search className="text-white" size={24} />,
-    },
-    {
-      title: "Gestion de Projet Agile",
-      description: "Pilotage de projets complexes via les méthodologies Scrum et Kanban pour une livraison itérative et de qualité.",
-      icon: <Settings className="text-white" size={24} />,
-    },
-    {
-      title: "Analyse UX & Ergonomie",
-      description: "Conception d'interfaces centrées utilisateur pour garantir une adoption fluide des outils digitaux.",
-      icon: <Users className="text-white" size={24} />,
-    }
   ];
 
   return (
