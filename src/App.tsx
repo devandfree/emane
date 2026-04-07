@@ -322,11 +322,6 @@ const Expertise = () => {
       icon: <Cpu className="text-white" size={24} />,
     },
     {
-      title: "Analyse des Risques",
-      description: "Identification et évaluation des menaces potentielles pour sécuriser la continuité des activités.",
-      icon: <AlertTriangle className="text-white" size={24} />,
-    },
-    {
       title: "Gestion du Changement",
       description: "Accompagnement des collaborateurs et des structures dans l'adoption de nouvelles méthodes et outils.",
       icon: <RefreshCw className="text-white" size={24} />,
@@ -344,7 +339,7 @@ const Expertise = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skill, i) => (
             <motion.div
               key={skill.title}
