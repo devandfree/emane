@@ -167,5 +167,51 @@ export const blogPosts: BlogPostData[] = [
     author: "Steve Emane",
     category: "Qualité",
     image: "https://www.hebergeur-image.com/upload/143.105.152.140-69d0b54aeddc0.jpg"
+  },
+  {
+    id: 6,
+    title: "Cartographie des processus : Maîtriser le BPMN, le SIPOC et au-delà",
+    excerpt: "Explorez les techniques essentielles de cartographie pour visualiser, analyser et optimiser vos flux de travail avec précision.",
+    content: `
+      <p>La cartographie des processus est l'étape fondamentale de toute démarche d'excellence opérationnelle. Elle permet de transformer une vision abstraite du travail en une représentation visuelle concrète, facilitant ainsi l'identification des inefficacités. Parmi l'arsenal d'outils disponibles, deux se distinguent par leur puissance et leur complémentarité : le <strong>SIPOC</strong> et le <strong>BPMN</strong>.</p>
+      
+      <h3>1. Le SIPOC : La vue d'ensemble stratégique</h3>
+      <p>Avant de plonger dans les détails, il est crucial de comprendre le cadre global. Le SIPOC (Supplier, Input, Process, Output, Customer) est un outil de haut niveau qui permet de définir le périmètre d'un processus.</p>
+      <ul>
+        <li><strong>S (Fournisseurs) :</strong> Qui fournit les éléments nécessaires ?</li>
+        <li><strong>I (Entrées) :</strong> Quelles sont les ressources ou informations entrantes ?</li>
+        <li><strong>P (Processus) :</strong> Quelles sont les 5 à 7 étapes macro ?</li>
+        <li><strong>O (Sorties) :</strong> Quel est le résultat final (produit ou service) ?</li>
+        <li><strong>C (Clients) :</strong> Qui bénéficie de la sortie ?</li>
+      </ul>
+      <p>Le SIPOC est idéal en phase de cadrage pour s'assurer que toutes les parties prenantes ont la même vision des frontières du projet.</p>
+
+      <h3>2. Le BPMN 2.0 : La précision chirurgicale</h3>
+      <p>Une fois le périmètre défini, le <strong>BPMN (Business Process Model and Notation)</strong> prend le relais pour une modélisation détaillée. C'est le standard international qui permet une communication sans ambiguïté entre le métier et l'informatique.</p>
+      <ul>
+        <li><strong>Événements :</strong> Cercles indiquant le début, les étapes intermédiaires ou la fin.</li>
+        <li><strong>Activités :</strong> Rectangles représentant les tâches effectuées.</li>
+        <li><strong>Passerelles (Gateways) :</strong> Losanges gérant les décisions et les branchements logiques (ET, OU, EXCLUSIF).</li>
+        <li><strong>Couloirs (Swimlanes) :</strong> Organisation visuelle par rôle ou département pour clarifier les responsabilités.</li>
+      </ul>
+
+      <h3>3. Autres techniques et outils indispensables</h3>
+      <p>Bien que le SIPOC et le BPMN soient centraux, d'autres méthodes complètent la boîte à outils de l'analyste :</p>
+      <ul>
+        <li><strong>Value Stream Mapping (VSM) :</strong> Issue du Lean, elle se concentre sur le flux de valeur et permet de distinguer les étapes à valeur ajoutée de celles qui génèrent du gaspillage.</li>
+        <li><strong>Diagramme de Flux (Flowchart) :</strong> Plus simple que le BPMN, il est parfait pour des procédures internes rapides et moins complexes.</li>
+        <li><strong>Process Mining :</strong> Une approche moderne qui utilise les logs des systèmes d'information (ERP, CRM) pour reconstruire automatiquement les processus réels, révélant ainsi les écarts avec la théorie.</li>
+      </ul>
+
+      <h3>Choisir le bon outil</h3>
+      <p>Le choix dépend de votre objectif : pour une analyse de haut niveau, préférez le <strong>SIPOC</strong>. Pour documenter des procédures complexes ou automatiser des flux, le <strong>BPMN</strong> est indispensable. Pour réduire les délais, tournez-vous vers la <strong>VSM</strong>.</p>
+
+      <p>En tant qu'<strong>Ingénieur BPM</strong>, je combine ces méthodologies pour offrir une visibilité totale sur vos opérations, transformant la complexité en clarté actionnable.</p>
+    `,
+    date: "08 Avril 2026",
+    readTime: "9 min",
+    author: "Steve Emane",
+    category: "Méthodologie",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop"
   }
 ];
