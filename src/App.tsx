@@ -48,9 +48,9 @@ const Navbar = () => {
     { name: "À propos", href: isHomePage ? "#about" : "/#about" },
     { name: "Expertise", href: isHomePage ? "#expertise" : "/#expertise" },
     { name: "Expérience", href: isHomePage ? "#experience" : "/#experience" },
+    { name: "Formation", href: isHomePage ? "#education" : "/#education" },
     { name: "Projets", href: isHomePage ? "#projects" : "/#projects" },
     { name: "Blog", href: "/blog", isRoute: true },
-    { name: "Contact", href: isHomePage ? "#contact" : "/#contact" },
   ];
 
   return (
@@ -463,6 +463,69 @@ const Experience = () => {
   );
 };
 
+const Education = () => {
+  const education = [
+    {
+      title: "Ingénierie des Processus Métier",
+      institution: "Formation la plus récente",
+      period: "2026",
+      description: "Spécialisation avancée dans la conception, l'exécution et le pilotage des processus d'entreprise pour maximiser la performance."
+    },
+    {
+      title: "Groupe d'Etude Prépa Certif Business Analyst",
+      institution: "ECBA, CCBA & CBAP",
+      period: "Certification IIBA",
+      description: "Parcours de préparation aux certifications internationales de l'IIBA, couvrant l'ensemble du BABOK Guide."
+    },
+    {
+      title: "Optimisation/Reingénierie des Processus Métier",
+      institution: "Expertise Opérationnelle",
+      period: "Formation Continue",
+      description: "Maîtrise des méthodologies de refonte de processus (BPR) pour transformer radicalement l'efficacité des organisations."
+    },
+    {
+      title: "Cartographie des Processus Métier (BPMN)",
+      institution: "Standard International",
+      period: "Expertise Technique",
+      description: "Utilisation approfondie de la norme BPMN 2.0 pour une modélisation précise et compréhensible des flux métier."
+    }
+  ];
+
+  return (
+    <section id="education" className="py-24 border-t border-silver-400/10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-sm font-bold text-silver-400 uppercase tracking-[0.3em] mb-4">Formation</h2>
+          <h3 className="text-4xl md:text-5xl font-bold mb-6">Autres Parcours Académiques</h3>
+          <p className="text-silver-400">
+            Un engagement constant dans l'acquisition de compétences de pointe pour accompagner la transformation des entreprises.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {education.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="p-8 bg-silver-900/20 silver-border rounded-sm hover:bg-silver-800/20 transition-all group"
+            >
+              <div className="text-xs font-bold text-silver-500 uppercase tracking-widest mb-2">{item.period}</div>
+              <h4 className="text-xl font-bold text-white mb-2 group-hover:text-silver-300 transition-colors">{item.title}</h4>
+              <div className="text-silver-400 text-sm font-medium mb-4">{item.institution}</div>
+              <p className="text-silver-400 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Projects = () => {
   const projects = [
     {
@@ -625,6 +688,7 @@ const Footer = () => {
           <a href={isHomePage ? "#about" : "/#about"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">À propos</a>
           <a href={isHomePage ? "#expertise" : "/#expertise"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Expertise</a>
           <a href={isHomePage ? "#experience" : "/#experience"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Expérience</a>
+          <a href={isHomePage ? "#education" : "/#education"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Formation</a>
           <a href={isHomePage ? "#projects" : "/#projects"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Projets</a>
           <Link to="/blog" className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Blog</Link>
         </div>
@@ -644,6 +708,7 @@ const Home = () => {
       <About />
       <Expertise />
       <Experience />
+      <Education />
       <Projects />
       <Contact />
     </main>
