@@ -308,22 +308,22 @@ const Expertise = () => {
   const skills = [
     {
       title: "Business Analysis",
-      description: "Clarification des besoins, traduction en solutions techniques, optimisation des processus.",
+      description: "Identification et clarification des besoins métiers complexes pour les traduire en spécifications techniques actionnables. Mon approche garantit que chaque solution logicielle ou organisationnelle répond précisément aux enjeux de performance et d'utilisabilité.",
       icon: <Monitor className="text-white" size={24} />,
     },
     {
       title: "Transformation Digitale",
-      description: "Allier stratégie, processus et outils numériques pour moderniser l’entreprise.",
+      description: "Accompagnement stratégique dans la modernisation des infrastructures et des flux de travail. Je pilote l'intégration d'outils numériques (ERP, LIMS, CRM) tout en veillant à la simplification des processus pour maximiser le retour sur investissement technologique.",
       icon: <Cpu className="text-white" size={24} />,
     },
     {
       title: "Risk & Change Management",
-      description: "Sécurisation des opérations, gestion des risques et pilotage de l’adhésion au changement.",
+      description: "Anticipation des goulots d'étranglement et sécurisation des déploiements critiques. Je mets en œuvre des plans de gestion des risques rigoureux et des stratégies d'accompagnement humain pour assurer une adoption fluide des nouveaux systèmes par les équipes.",
       icon: <ShieldCheck className="text-white" size={24} />,
     },
     {
       title: "Architecture d'Entreprise orientée BPM",
-      description: "Alignement entre architecture IT, processus métier et stratégie de l’entreprise.",
+      description: "Structuration globale des organisations à travers la modélisation standardisée (BPMN 2.0). Mon rôle est de garantir une parfaite cohérence entre la vision stratégique, les processus opérationnels et l'architecture du système d'information.",
       icon: <Layers className="text-white" size={24} />,
     },
   ];
