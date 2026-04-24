@@ -307,24 +307,24 @@ const About = () => {
 const Expertise = () => {
   const skills = [
     {
-      title: "Business Process Management (BPM)",
-      description: "Identification, modélisation et optimisation des processus métier pour une efficacité opérationnelle maximale.",
-      icon: <Layers className="text-white" size={24} />,
-    },
-    {
       title: "Business Analysis",
-      description: "Cadrage des besoins, rédaction de cahiers des charges et interface entre métier et IT.",
+      description: "Clarification des besoins, traduction en solutions techniques, optimisation des processus.",
       icon: <Monitor className="text-white" size={24} />,
     },
     {
       title: "Transformation Digitale",
-      description: "Accompagnement dans le déploiement de solutions technologiques alignées sur les objectifs stratégiques.",
+      description: "Allier stratégie, processus et outils numériques pour moderniser l’entreprise.",
       icon: <Cpu className="text-white" size={24} />,
     },
     {
-      title: "Gestion du Changement",
-      description: "Accompagnement des collaborateurs et des structures dans l'adoption de nouvelles méthodes et outils.",
-      icon: <RefreshCw className="text-white" size={24} />,
+      title: "Risk & Change Management",
+      description: "Sécurisation des opérations, gestion des risques et pilotage de l’adhésion au changement.",
+      icon: <ShieldCheck className="text-white" size={24} />,
+    },
+    {
+      title: "Architecture d'Entreprise orientée BPM",
+      description: "Alignement entre architecture IT, processus métier et stratégie de l’entreprise.",
+      icon: <Layers className="text-white" size={24} />,
     },
   ];
 
