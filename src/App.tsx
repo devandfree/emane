@@ -353,7 +353,7 @@ const Expertise = () => {
 const Experience = () => {
   const experiences = [
     {
-      role: "LIMS Implementer",
+      role: "ingénieur Conception/LIMS Implementer",
       company: "KB SAP Consulting SARL",
       period: "Fév. 2026 - Présent",
       description: "Implémentation et configuration de systèmes de gestion d'informations de laboratoire (LIMS) pour optimiser les flux de travail scientifiques."
