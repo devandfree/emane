@@ -232,7 +232,7 @@ const About = () => {
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white flex items-center justify-center p-4 rounded-sm hidden md:flex">
               <div className="text-black text-center">
-                <div className="text-3xl font-bold">3+</div>
+                <div className="text-3xl font-bold">4+</div>
                 <div className="text-[10px] font-bold uppercase tracking-widest">Ans d'Expertise</div>
               </div>
             </div>
