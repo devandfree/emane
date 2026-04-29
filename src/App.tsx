@@ -148,89 +148,64 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Accents */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-silver-400/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-silver-400/5 rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex flex-col justify-center bg-black pt-20 px-6 overflow-hidden">
+      {/* Grid Pattern & Mask */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-silver-800/50 border border-silver-400/20 text-silver-400 text-xs font-bold mb-6"
-            >
-              <Zap size={14} />
-              <span>IT BUSINESS ANALYST & BPM ENGINEER</span>
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-8"
-            >
-              Structurer la <span className="silver-gradient">complexité</span>. <br />
-              Accélérer la <span className="silver-gradient">performance</span>.
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg md:text-xl text-silver-400 mb-10 max-w-2xl leading-relaxed"
-            >
-              J'améliore la performance des processus métier et optimise les stratégies d’entreprise avec une approche structurée, analytique et orientée résultats.
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
-            >
-              <a href="#expertise" className="px-8 py-4 bg-white text-black font-bold rounded-sm flex items-center justify-center hover:bg-silver-200 transition-all group">
-                Découvrir mon expertise
-                <ChevronRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a href="#contact" className="px-8 py-4 border border-silver-400/30 text-white font-bold rounded-sm flex items-center justify-center hover:bg-white/5 transition-all">
-                Me contacter
-              </a>
-            </motion.div>
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col"
+        >
+          <div className="flex items-center gap-4 mb-10">
+            <div className="h-px w-12 bg-silver-500" />
+            <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-silver-500">
+              Expertise & Performance Opérationnelle
+            </span>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="hidden lg:block relative"
-          >
-            <div className="relative z-10 aspect-square rounded-sm overflow-hidden silver-border silver-glow">
-              <img 
-                src="https://www.hebergeur-image.com/upload/143.105.152.140-69cf744c9a664.png" 
-                alt="Illustration 3D automatisation des processus" 
-                className="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition-opacity duration-700"
-                referrerPolicy="no-referrer"
-              />
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.85] mb-16">
+            Optimiser <br />
+            pour <span className="text-transparent bg-clip-text bg-gradient-to-r from-silver-100 via-silver-400 to-silver-600">transformer</span>.
+          </h1>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            <div className="lg:col-span-7">
+              <p className="text-silver-400 text-xl md:text-3xl font-light leading-relaxed max-w-2xl">
+                J’aide les PME à <span className="text-white">structurer</span>, <span className="text-white">optimiser</span> et <span className="text-white">digitaliser</span> leurs processus pour gagner en efficacité et réduire les pertes.
+              </p>
             </div>
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-white/20" />
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-white/20" />
-          </motion.div>
-        </div>
+            <div className="lg:col-span-5 flex justify-start lg:justify-end">
+              <a 
+                href="#expertise" 
+                className="group relative px-12 py-6 bg-white text-black font-bold uppercase text-xs tracking-[0.3em] hover:bg-silver-200 transition-all overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center">
+                  Démarrer un projet
+                  <ChevronRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-silver-100 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
-      
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block"
-      >
-        <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent" />
-      </motion.div>
+
+      {/* Background Accent Text */}
+      <div className="absolute -bottom-20 -right-20 pointer-events-none select-none opacity-[0.03]">
+        <h2 className="text-[35vw] font-black leading-none text-white whitespace-nowrap tracking-tighter">
+          BPM.
+        </h2>
+      </div>
+
+      {/* Side Label */}
+      <div className="absolute left-10 bottom-20 hidden lg:block rotate-90 origin-left">
+        <span className="text-[10px] font-mono tracking-[0.5em] text-silver-600 uppercase">
+          Steve Emane — ©2026
+        </span>
+      </div>
     </section>
   );
 };
@@ -308,22 +283,22 @@ const Expertise = () => {
   const skills = [
     {
       title: "Business Analysis",
-      description: "Identification et clarification des besoins métiers complexes pour les traduire en spécifications techniques actionnables. Mon approche garantit que chaque solution logicielle ou organisationnelle répond précisément aux enjeux de performance et d'utilisabilité.",
+      description: "Analyse approfondie des processus actuels ('As-Is') pour identifier les inefficacités et les opportunités d'amélioration. Je traduis les besoins métiers complexes en spécifications fonctionnelles robustes, assurant un alignement parfait entre les attentes des utilisateurs et les livrables techniques du système d'information.",
       icon: <Monitor className="text-white" size={24} />,
     },
     {
       title: "Transformation Digitale",
-      description: "Accompagnement stratégique dans la modernisation des infrastructures et des flux de travail. Je pilote l'intégration d'outils numériques (ERP, LIMS, CRM) tout en veillant à la simplification des processus pour maximiser le retour sur investissement technologique.",
+      description: "Transformation des flux de travail traditionnels en écosystèmes numériques agiles. Je sélectionne et intègre les meilleures technologies (ERP, LIMS, CRM) pour automatiser les tâches répétitives, réduire les erreurs manuelles et offrir une visibilité en temps réel sur les indicateurs de performance clés (KPIs).",
       icon: <Cpu className="text-white" size={24} />,
     },
     {
       title: "Risk & Change Management",
-      description: "Anticipation des goulots d'étranglement et sécurisation des déploiements critiques. Je mets en œuvre des plans de gestion des risques rigoureux et des stratégies d'accompagnement humain pour assurer une adoption fluide des nouveaux systèmes par les équipes.",
+      description: "Sécurisation des transitions organisationnelles par une évaluation rigoureuse des risques opérationnels. Je conçois des programmes d'accompagnement sur mesure — formations, ateliers et stratégies de communication — pour lever les résistances au changement et ancrer durablement les nouvelles pratiques.",
       icon: <ShieldCheck className="text-white" size={24} />,
     },
     {
       title: "Architecture d'Entreprise orientée BPM",
-      description: "Structuration globale des organisations à travers la modélisation standardisée (BPMN 2.0). Mon rôle est de garantir une parfaite cohérence entre la vision stratégique, les processus opérationnels et l'architecture du système d'information.",
+      description: "Conception d'une structure organisationnelle cohérente où chaque processus est modélisé selon la norme BPMN 2.0. Je veille à ce que l'infrastructure technologique supporte efficacement les objectifs stratégiques, créant une symbiose entre la vision de la direction et l'exécution opérationnelle quotidienne.",
       icon: <Layers className="text-white" size={24} />,
     },
   ];
