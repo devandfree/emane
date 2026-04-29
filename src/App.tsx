@@ -362,7 +362,7 @@ const Experience = () => {
       role: "IT Business Analyst & BPM Engineer",
       company: "Expertise Indépendante",
       period: "Présent",
-      description: "Accompagnement stratégique des entreprises dans l'optimisation de leurs processus et la gestion de projets IT complexes."
+      description: "J’aide les PME à structurer, optimiser et digitaliser leurs processus pour gagner en efficacité et réduire les pertes."
     },
     {
       role: "Business Analyst",
