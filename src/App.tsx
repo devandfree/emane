@@ -282,24 +282,24 @@ const About = () => {
 const Expertise = () => {
   const skills = [
     {
-      title: "Business Analysis",
-      description: "Analyse approfondie des processus actuels ('As-Is') pour identifier les inefficacités et les opportunités d'amélioration. Je traduis les besoins métiers complexes en spécifications fonctionnelles robustes, assurant un alignement parfait entre les attentes des utilisateurs et les livrables techniques du système d'information.",
+      title: "Structurer",
+      description: "Audit complet et cartographie standardisée (BPMN 2.0) pour clarifier les rôles, les flux et les responsabilités. Je pose les fondations d'une organisation robuste en traduisant la complexité métier en modèles visuels actionnables.",
+      icon: <Layers className="text-white" size={24} />,
+    },
+    {
+      title: "Optimiser",
+      description: "Identification des goulots d'étranglement et élimination des tâches sans valeur ajoutée. J'utilise les méthodologies Lean et BPM pour réduire les pertes opérationnelles et maximiser la fluidité de vos cycles de travail.",
       icon: <Monitor className="text-white" size={24} />,
     },
     {
-      title: "Transformation Digitale",
-      description: "Transformation des flux de travail traditionnels en écosystèmes numériques agiles. Je sélectionne et intègre les meilleures technologies (ERP, LIMS, CRM) pour automatiser les tâches répétitives, réduire les erreurs manuelles et offrir une visibilité en temps réel sur les indicateurs de performance clés (KPIs).",
+      title: "Digitaliser",
+      description: "Intégration stratégique d'outils numériques (ERP, LIMS, CRM) alignés sur vos processus optimisés. Mon approche évite 'l'automatisation du désordre' en veillant à ce que la technologie soit un levier de performance réelle.",
       icon: <Cpu className="text-white" size={24} />,
     },
     {
-      title: "Risk & Change Management",
-      description: "Sécurisation des transitions organisationnelles par une évaluation rigoureuse des risques opérationnels. Je conçois des programmes d'accompagnement sur mesure — formations, ateliers et stratégies de communication — pour lever les résistances au changement et ancrer durablement les nouvelles pratiques.",
+      title: "Pérenniser",
+      description: "Gestion des risques et accompagnement au changement pour sécuriser vos transformations. Je veille à ce que les gains d'efficacité soient durables grâce à des stratégies d'adoption humaine et de pilotage par la donnée (KPIs).",
       icon: <ShieldCheck className="text-white" size={24} />,
-    },
-    {
-      title: "Architecture d'Entreprise orientée BPM",
-      description: "Conception d'une structure organisationnelle cohérente où chaque processus est modélisé selon la norme BPMN 2.0. Je veille à ce que l'infrastructure technologique supporte efficacement les objectifs stratégiques, créant une symbiose entre la vision de la direction et l'exécution opérationnelle quotidienne.",
-      icon: <Layers className="text-white" size={24} />,
     },
   ];
 
