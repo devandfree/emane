@@ -246,7 +246,7 @@ const About = () => {
           >
             <h2 className="text-sm font-bold text-silver-400 uppercase tracking-[0.3em] mb-4">Qui suis-je ?</h2>
             <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
-              Ingénieur Génie Informatique <br />
+              Ingénieur de Conception <br />
               <span className="text-silver-400">IT Business Analyst & BPM Engineer</span>
             </h3>
             
@@ -507,13 +507,13 @@ const Projects = () => {
       title: "Analyse des Processus Métier",
       description: "Audit complet et modélisation des flux de travail pour identifier les inefficacités et proposer des solutions d'optimisation structurées.",
       tags: ["AS-IS Analysis", "BPMN 2.0", "Consulting"],
-      image: "https://images.unsplash.com/photo-1454165833762-02c65764d30e?q=80&w=2070&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Cartographie des Risques",
       description: "Identification, évaluation et hiérarchisation des risques métiers pour sécuriser les processus critiques et garantir la résilience organisationnelle.",
       tags: ["Risk Analysis", "Audit IT", "Compliance"],
-      image: "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?q=80&w=2070&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Audit de Transformation Digitale",
