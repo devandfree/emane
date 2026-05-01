@@ -504,10 +504,10 @@ const Education = () => {
 const Projects = () => {
   const projects = [
     {
-      title: "Optimisation BPM Logistique",
-      description: "Refonte complète des processus de gestion de stock et de distribution pour une réduction des coûts opérationnels de 15%.",
-      tags: ["BPMN 2.0", "Lean Six Sigma", "ERP"],
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
+      title: "Analyse des Processus Métier",
+      description: "Audit complet et modélisation des flux de travail pour identifier les inefficacités et proposer des solutions d'optimisation structurées.",
+      tags: ["AS-IS Analysis", "BPMN 2.0", "Consulting"],
+      image: "https://images.unsplash.com/photo-1454165833762-02c65764d30e?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Cartographie des Risques",
@@ -517,7 +517,7 @@ const Projects = () => {
     },
     {
       title: "Audit de Transformation Digitale",
-      description: "Analyse de maturité numérique et définition d'une roadmap stratégique pour la migration vers des solutions Cloud.",
+      description: "Analyse de maturité numérique et définition d'une roadmap stratégique pour la migration vers un ERP.",
       tags: ["Cloud Strategy", "Audit", "Digital Transformation"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
     }
