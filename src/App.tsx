@@ -246,7 +246,7 @@ const About = () => {
           >
             <h2 className="text-sm font-bold text-silver-400 uppercase tracking-[0.3em] mb-4">Qui suis-je ?</h2>
             <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
-              Ingénieur de Conception <br />
+              Ingénieur Conception <br />
               <span className="text-silver-400">IT Business Analyst & BPM Engineer</span>
             </h3>
             
