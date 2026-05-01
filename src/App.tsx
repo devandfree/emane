@@ -510,10 +510,10 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
     },
     {
-      title: "Dashboard de Performance IT",
-      description: "Conception d'un tableau de bord décisionnel permettant le suivi en temps réel des KPI stratégiques et de la santé des systèmes.",
-      tags: ["Power BI", "SQL", "Business Intelligence"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+      title: "Cartographie des Risques",
+      description: "Identification, évaluation et hiérarchisation des risques métiers pour sécuriser les processus critiques et garantir la résilience organisationnelle.",
+      tags: ["Risk Analysis", "Audit IT", "Compliance"],
+      image: "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?q=80&w=2070&auto=format&fit=crop"
     },
     {
       title: "Audit de Transformation Digitale",
