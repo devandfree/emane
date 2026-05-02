@@ -252,24 +252,24 @@ const About = () => {
             
             <div className="space-y-6 text-silver-300 leading-relaxed">
               <p>
-                À l’interface entre les équipes métier, la direction et les fonctions IT, j’accompagne les organisations dans l’identification, la formalisation et la priorisation de leurs besoins, afin de concevoir et déployer des solutions efficaces, durables et alignées avec leurs objectifs stratégiques.
+                Ma mission est d'accompagner les PME dans leur montée en puissance opérationnelle. J'interviens comme le pont entre vos ambitions stratégiques et votre réalité technologique pour <span className="text-white font-medium">structurer</span> vos fondations, <span className="text-white font-medium">optimiser</span> vos flux et <span className="text-white font-medium">digitaliser</span> votre avenir.
               </p>
               <p>
-                Mon expertise me permet d’intervenir sur l’ensemble de la chaîne de valeur, de l’analyse des processus existants à la mise en œuvre d’initiatives d’amélioration continue, en passant par l’accompagnement de projets de transformation digitale.
+                Avec une expertise en Analyse Métier (BA) et Manegement des Processus Métier (BPM), j'analyse vos processus actuels pour en extraire les inefficacités. Mon but n'est pas seulement d'installer des outils, mais de bâtir des écosystèmes fluides où chaque action génère de la valeur et chaque perte est minimisée.
               </p>
               <p>
-                Reconnu pour ma rigueur, mon sens de l’analyse et ma capacité à structurer des problématiques complexes, je m’engage à délivrer des solutions à forte valeur ajoutée, en combinant vision stratégique et efficacité opérationnelle.
+                En combinant rigueur analytique et vision pragmatique, je transforme le chaos organisationnel en systèmes performants et pérennes, garantissant ainsi que votre transformation digitale soit un investissement rentable, et non un simple coût technique.
               </p>
             </div>
             
             <div className="mt-10 pt-10 border-t border-silver-400/10 grid grid-cols-2 gap-8">
               <div>
-                <h4 className="text-white font-bold mb-2">Approche</h4>
-                <p className="text-sm text-silver-400">Analytique & Orientée Résultats</p>
+                <h4 className="text-white font-bold mb-2">Engagement</h4>
+                <p className="text-sm text-silver-400">Zéro Goulot, Zéro Perte</p>
               </div>
               <div>
-                <h4 className="text-white font-bold mb-2">Focus</h4>
-                <p className="text-sm text-silver-400">Simplification & Performance</p>
+                <h4 className="text-white font-bold mb-2">Cœur</h4>
+                <p className="text-sm text-silver-400">Structuration & Performance</p>
               </div>
             </div>
           </motion.div>
