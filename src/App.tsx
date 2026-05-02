@@ -255,7 +255,7 @@ const About = () => {
                 Ma mission est d'accompagner les PME dans leur montée en puissance opérationnelle. J'interviens comme le pont entre vos ambitions stratégiques et votre réalité technologique pour <span className="text-white font-medium">structurer</span> vos fondations, <span className="text-white font-medium">optimiser</span> vos flux et <span className="text-white font-medium">digitaliser</span> votre avenir.
               </p>
               <p>
-                Avec une expertise en Analyse Métier (BA) et Manegement des Processus Métier (BPM), j'analyse vos processus actuels pour en extraire les inefficacités. Mon but n'est pas seulement d'installer des outils, mais de bâtir des écosystèmes fluides où chaque action génère de la valeur et chaque perte est minimisée.
+                Avec une expertise en Analyse Métier (BA) et Management des Processus Métier (BPM), j'analyse vos processus actuels pour en extraire les inefficacités. Mon but n'est pas seulement d'installer des outils, mais de bâtir des écosystèmes fluides où chaque action génère de la valeur et chaque perte est minimisée.
               </p>
               <p>
                 En combinant rigueur analytique et vision pragmatique, je transforme le chaos organisationnel en systèmes performants et pérennes, garantissant ainsi que votre transformation digitale soit un investissement rentable, et non un simple coût technique.
