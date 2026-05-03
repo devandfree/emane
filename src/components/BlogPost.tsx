@@ -5,9 +5,9 @@ import { useState } from "react";
 import { blogPosts } from "../data/blogData";
 
 const BlogPost = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [copied, setCopied] = useState(false);
-  const post = blogPosts.find(p => p.id === Number(id));
+  const post = blogPosts.find(p => p.slug === slug);
 
   const handleShare = async () => {
     const shareData = {

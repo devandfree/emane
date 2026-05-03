@@ -41,7 +41,7 @@ const Blog = () => {
               transition={{ delay: i * 0.1 }}
               className="group bg-silver-900/40 silver-border rounded-sm overflow-hidden hover:bg-silver-800/40 transition-all flex flex-col"
             >
-              <Link to={`/blog/${post.id}`} className="block">
+              <Link to={`/blog/${post.slug}`} className="block">
                 <div className="aspect-video overflow-hidden relative">
                   <img 
                     src={post.image} 
@@ -61,7 +61,7 @@ const Blog = () => {
                   <span className="flex items-center"><Clock size={12} className="mr-1" /> {post.readTime}</span>
                 </div>
                 
-                <Link to={`/blog/${post.id}`}>
+                <Link to={`/blog/${post.slug}`}>
                   <h2 className="text-2xl font-bold mb-4 text-white group-hover:text-silver-300 transition-colors leading-tight">
                     {post.title}
                   </h2>
@@ -83,7 +83,7 @@ const Blog = () => {
                     </div>
                     {post.author}
                   </div>
-                  <Link to={`/blog/${post.id}`} className="text-white hover:text-silver-400 transition-colors flex items-center text-xs font-bold uppercase tracking-widest">
+                  <Link to={`/blog/${post.slug}`} className="text-white hover:text-silver-400 transition-colors flex items-center text-xs font-bold uppercase tracking-widest">
                     Lire plus <ChevronRight size={14} className="ml-1" />
                   </Link>
                 </div>

@@ -1,5 +1,6 @@
 export interface BlogPostData {
   id: number;
+  slug: string;
   title: string;
   excerpt: string;
   content: string;
@@ -13,6 +14,7 @@ export interface BlogPostData {
 export const blogPosts: BlogPostData[] = [
   {
     id: 1,
+    slug: "importance-bpm-transformation-digitale",
     title: "L'importance du BPM dans la transformation digitale",
     excerpt: "Découvrez comment la modélisation des processus métier peut accélérer votre transition vers le numérique et optimiser vos coûts.",
     content: `
@@ -45,6 +47,7 @@ export const blogPosts: BlogPostData[] = [
   },
   {
     id: 2,
+    slug: "lean-six-sigma-excellence-operationnelle",
     title: "Lean Six Sigma : Plus qu'une méthodologie, un état d'esprit",
     excerpt: "Pourquoi l'approche Lean est essentielle pour les entreprises modernes cherchant l'excellence opérationnelle et la satisfaction client.",
     content: `
@@ -73,6 +76,7 @@ export const blogPosts: BlogPostData[] = [
   },
   {
     id: 3,
+    slug: "ia-service-analyse-metier",
     title: "L'IA au service de l'analyse métier",
     excerpt: "Comment l'intelligence artificielle transforme le rôle du Business Analyst et ouvre de nouvelles perspectives d'optimisation.",
     content: `
@@ -104,6 +108,7 @@ export const blogPosts: BlogPostData[] = [
   },
   {
     id: 4,
+    slug: "lims-coeur-numerique-laboratoires",
     title: "LIMS : Le cœur numérique des laboratoires modernes",
     excerpt: "Comment les systèmes de gestion d'informations de laboratoire (LIMS) révolutionnent l'efficacité et la conformité dans le secteur scientifique.",
     content: `
@@ -139,6 +144,7 @@ export const blogPosts: BlogPostData[] = [
   },
   {
     id: 5,
+    slug: "iso-17025-logiciel-gestion-laboratoire",
     title: "Comprendre l’ISO 17025 grâce à un logiciel de gestion de laboratoire",
     excerpt: "Découvrez comment un LIMS facilite la mise en conformité avec la norme ISO 17025 et garantit la qualité des résultats d'essais et d'étalonnages.",
     content: `
@@ -170,6 +176,7 @@ export const blogPosts: BlogPostData[] = [
   },
   {
     id: 6,
+    slug: "cartographie-processus-bpmn-sipoc",
     title: "Cartographie des processus : Maîtriser le BPMN, le SIPOC et au-delà",
     excerpt: "Explorez les techniques essentielles de cartographie pour visualiser, analyser et optimiser vos flux de travail avec précision.",
     content: `
@@ -216,6 +223,7 @@ export const blogPosts: BlogPostData[] = [
   },
   {
     id: 7,
+    slug: "digitalisation-sans-bpm-vs-avec-bpm",
     title: "La digitalisation : sans BPM vs avec BPM",
     excerpt: "Pourquoi digitaliser un processus inefficace ne fait qu'accélérer le chaos, et comment l'approche BPM garantit une transformation réussie.",
     content: `
@@ -278,6 +286,7 @@ export const blogPosts: BlogPostData[] = [
   },
   {
     id: 8,
+    slug: "sipoc-methode-cadrage-processus",
     title: "SIPOC : La méthode essentielle pour cadrer vos processus",
     excerpt: "Apprenez à utiliser le SIPOC pour définir clairement le périmètre de vos projets d'amélioration et aligner toutes les parties prenantes.",
     content: `
@@ -321,6 +330,7 @@ export const blogPosts: BlogPostData[] = [
   },
   {
     id: 9,
+    slug: "gestion-du-changement-pilier-humain",
     title: "Gestion du Changement : Le pilier humain de la transformation digitale",
     excerpt: "Pourquoi la technologie seule ne suffit pas et comment accompagner l'humain pour garantir le succès de vos nouveaux processus.",
     content: `
