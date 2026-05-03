@@ -372,5 +372,49 @@ export const blogPosts: BlogPostData[] = [
     author: "Steve Emane",
     category: "Management",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 10,
+    slug: "cartographie-des-risques-metiers",
+    title: "Cartographie des Risques : Anticiper pour mieux protéger",
+    excerpt: "Découvrez comment identifier, évaluer et hiérarchiser les risques métiers pour sécuriser vos processus critiques et garantir la résilience de votre organisation.",
+    content: `
+      <p>Dans un environnement économique de plus en plus incertain, la pérennité d'une entreprise ne dépend pas seulement de sa croissance, mais aussi de sa capacité à résister aux imprévus. La <strong>Cartographie des Risques</strong> est l'outil indispensable pour transformer l'incertitude en une variable maîtrisée.</p>
+      
+      <h3>1. Pourquoi cartographier les risques ?</h3>
+      <p>La gestion des risques n'est pas réservée aux grandes banques ou aux secteurs industriels dangereux. Toute PME possède des processus critiques (ventes, production, RH, IT) dont la défaillance pourrait paralyser l'activité. Cartographier permet de :</p>
+      <ul>
+        <li><strong>Sécuriser les actifs :</strong> Humains, financiers, technologiques et réputationnels.</li>
+        <li><strong>Optimiser les ressources :</strong> En allouant les budgets de sécurité là où ils sont le plus nécessaires.</li>
+        <li><strong>Gagner en sérénité :</strong> En ayant un plan d'action prêt pour les scénarios les plus probables.</li>
+      </ul>
+
+      <h3>2. Les 3 étapes de la démarche</h3>
+      <p>Une cartographie réussie repose sur une méthode rigoureuse en trois temps :</p>
+      <ol>
+        <li><strong>L'Identification :</strong> Recenser tous les événements redoutés au travers d'entretiens et d'ateliers avec les opérationnels. On cherche à répondre à : "Qu'est-ce qui pourrait mal se passer ?"</li>
+        <li><strong>L'Évaluation :</strong> Pour chaque risque, on évalue son <i>Impact</i> (gravité) et sa <i>Probabilité</i> (fréquence). Le produit des deux nous donne la criticité du risque.</li>
+        <li><strong>La Hiérarchisation :</strong> Positionner ces risques sur une matrice (souvent appelée 'Heat Map') pour visualiser immédiatement les zones de danger rouge où une action immédiate est requise.</li>
+      </ol>
+
+      <h3>3. Quelles stratégies de traitement ?</h3>
+      <p>Une fois le risque identifié, quatre options s'offrent à vous :</p>
+      <ul>
+        <li><strong>Réduire :</strong> Mettre en place des contrôles ou des procédures pour diminuer la probabilité ou l'impact (ex: double validation des virements).</li>
+        <li><strong>Transférer :</strong> Souscrire à une assurance ou externaliser l'activité à un tiers spécialisé.</li>
+        <li><strong>Éviter :</strong> Arrêter l'activité trop risquée si le gain n'en vaut pas la chandelle.</li>
+        <li><strong>Accepter :</strong> Si le risque est résiduel et le coût de traitement trop élevé par rapport à l'impact potentiel.</li>
+      </ul>
+
+      <h3>Conclusion : Une culture de la vigilance</h3>
+      <p>La cartographie des risques n'est pas un document figé que l'on range dans un tiroir après un audit. C'est un outil vivant qui doit évoluer avec votre entreprise. En tant qu'analyste, mon objectif est de vous aider à construire cette culture de la vigilance pour que chaque risque identifié devienne une opportunité de renforcement.</p>
+
+      <p>N'attendez pas la crise pour réfléchir à vos protections. Anticipez dès aujourd'hui.</p>
+    `,
+    date: "03 Mai 2026",
+    readTime: "7 min",
+    author: "Steve Emane",
+    category: "Risque",
+    image: "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=2070&auto=format&fit=crop"
   }
 ];
