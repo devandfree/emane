@@ -125,6 +125,56 @@ const BlogPost = () => {
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
+        {/* Section Articles Similaires */}
+        <div className="mt-24 pt-24 border-t border-silver-400/10">
+          <h3 className="text-2xl font-bold mb-12 flex items-center justify-between">
+            Articles similaires
+            <Link to="/blog" className="text-sm font-bold uppercase tracking-widest text-silver-500 hover:text-white transition-colors flex items-center">
+              Voir tout <ChevronRight size={14} className="ml-1" />
+            </Link>
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blogPosts
+              .filter(p => p.slug !== slug)
+              .sort((a, b) => {
+                if (a.category === post.category && b.category !== post.category) return -1;
+                if (a.category !== post.category && b.category === post.category) return 1;
+                return 0;
+              })
+              .slice(0, 3)
+              .map((similarPost, idx) => (
+                <motion.div
+                  key={similarPost.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group"
+                >
+                  <Link to={`/blog/${similarPost.slug}`} className="block mb-4 aspect-video rounded-sm overflow-hidden silver-border bg-silver-900">
+                    <img 
+                      src={similarPost.image} 
+                      alt={similarPost.title}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                  </Link>
+                  <div className="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-silver-500 mb-2">
+                    <span className="text-white">{similarPost.category}</span>
+                    <span>•</span>
+                    <span>{similarPost.readTime}</span>
+                  </div>
+                  <Link to={`/blog/${similarPost.slug}`} className="block">
+                    <h4 className="text-lg font-bold leading-snug group-hover:text-silver-300 transition-colors line-clamp-2">
+                      {similarPost.title}
+                    </h4>
+                  </Link>
+                </motion.div>
+              ))}
+          </div>
+        </div>
+
         <footer className="mt-20 pt-10 border-t border-silver-400/10">
           <div className="bg-silver-900/50 p-8 rounded-sm silver-border flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
