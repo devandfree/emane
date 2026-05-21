@@ -3,7 +3,7 @@ import {
   AlertTriangle,
   Briefcase, 
   ChevronRight, 
-  Code,
+  ChevronDown,  Code,
   Cpu, 
   Database, 
   ExternalLink, 
@@ -60,6 +60,7 @@ const Navbar = () => {
     { name: "Expérience", href: isHomePage ? "#experience" : "/#experience" },
     { name: "Formation", href: isHomePage ? "#education" : "/#education" },
     { name: "Projets", href: isHomePage ? "#projects" : "/#projects" },
+    { name: "FAQ", href: isHomePage ? "#faq" : "/#faq" },
     { name: "Blog", href: "/blog", isRoute: true },
   ];
 
@@ -1335,6 +1336,101 @@ const Projects = () => {
   );
 };
 
+const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      question: "Qu'est-ce que le BPM (Business Process Management) et quel est son intérêt ?",
+      answer: "Le BPM (Management des Processus Métier) est une discipline clé qui consiste à analyser, modéliser, optimiser et standardiser les flux de votre organisation. Son but premier est de chasser l’incohérence opérationnelle : éliminer les doublons, clarifier les rôles et rationaliser les parcours de travail pour s'aligner sur votre stratégie."
+    },
+    {
+      question: "Pourquoi est-il indispensable de modéliser nos processus avant d'intégrer un ERP ou un nouvel outil IT ?",
+      answer: "Automatiser un flux inefficace ne fait qu'« automatiser le désordre » et engendre des surcoûts d'intégration majeurs. Modéliser en BPMN 2.0 en amont permet de simplifier les circuits opérationnels, de définir des exigences techniques propres issues de la réalité d'affaires et de maximiser le retour sur investissement de vos projets logiciels d'entreprise."
+    },
+    {
+      question: "Comment collabore-t-on avec un IT Business Analyst & Process Consultant ?",
+      answer: "J’interviens comme le traducteur et le facilitateur de confiance entre vos équipes métier (qui subissent les frictions opérationnelles) et vos équipes techniques ou intégrateurs systèmes. À travers des ateliers guidés par le standard international BABOK v3, nous co-construisons des cartographies fidèles, des analyses d’écarts fonctionnels et des plans de transition vers la performance."
+    },
+    {
+      question: "Quels livrables concrets vais-je recevoir à la fin d'une mission de conseil ?",
+      answer: "Les livrables de choix comprennent : le Document de Cadrage d'Affaires, des Cartographies de processus AS-IS (existant) et TO-BE (cible) au standard OMG BPMN 2.0, des procédures opérationnelles standardisées (SOP) pour vos collaborateurs, le Dossier de Spécifications Fonctionnelles Détaillées pour vos équipes IT, et les plans de tests d'acceptation utilisateur (UAT)."
+    },
+    {
+      question: "Combien de temps dure généralement une intervention type ?",
+      answer: "La durée varie de manière fluide selon les objectifs visés. Une mission initiale de diagnostic opérationnel, d'identification d'écarts ou de cadrage s'étend généralement sur 2 à 4 semaines. Un accompagnement d'envergure, incluant l'optimisation des flux complexes et le support à la mise en œuvre de solutions d'affaires durables, peut nécessiter plusieurs mois de collaboration agile."
+    },
+    {
+      question: "Intervenez-vous également sur l’accompagnement au changement des équipes ?",
+      answer: "Absolument. Une transformation n’est efficace que si elle est adoptée par les collaborateurs de terrain. J'intègre des démarches d’accompagnement au changement (méthode ADKAR) tout au long du cycle du projet (SOP clairs, ateliers d'appropriation, et formations pratiques) pour garantir l'adoption définitive des nouvelles méthodes."
+    }
+  ];
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section id="faq" className="py-24 border-t border-silver-400/10 bg-black relative overflow-hidden">
+      {/* Visual ornaments supporting the high-profile mood */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.005] rounded-full blur-[120px] pointer-events-none" />
+      
+      <div className="max-w-4xl mx-auto px-6 relative z-10 w-full">
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.02] border border-white/5 rounded-sm mb-4">
+            <HelpCircle size={13} className="text-amber-500" />
+            <span className="text-[10px] font-bold text-silver-400 uppercase tracking-[0.2em] font-mono">FAQ • Réponses d'expert</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-white mb-6">
+            Questions Fréquentes
+          </h2>
+          <p className="text-silver-400 text-sm md:text-base font-light leading-relaxed">
+            Comprendre la valeur de l'alignement stratégique et de la réingénierie des processus au service de la performance de votre organisation.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div 
+                key={index}
+                className="bg-silver-900/10 border border-silver-850 hover:border-silver-800 transition-all duration-300 rounded-sm overflow-hidden"
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full px-6 py-5 md:py-6 flex justify-between items-center gap-4 text-left group hover:bg-white/[0.01] transition-colors focus:outline-none bg-transparent"
+                  style={{ minHeight: "44px" }}
+                  aria-expanded={isOpen}
+                >
+                  <span className="text-sm md:text-base font-bold text-white group-hover:text-amber-400 transition-colors tracking-tight font-display">
+                    {faq.question}
+                  </span>
+                  <div className={`p-1 bg-white/[0.03] border border-white/5 rounded-sm text-silver-400 group-hover:text-white group-hover:bg-white/[0.08] transition-all flex-shrink-0 duration-300 ${isOpen ? 'rotate-180 text-amber-500 border-amber-500/10' : ''}`}>
+                    <ChevronDown size={16} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                  </div>
+                </button>
+
+                <motion.div
+                  initial={false}
+                  animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                  transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 pb-6 md:pb-7 text-xs md:text-sm text-silver-400 leading-relaxed font-light border-l-2 border-amber-500/40 ml-6 pl-4 pt-2 pb-2">
+                    {faq.answer}
+                  </div>
+                </motion.div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Contact = () => {
   const collaborations = [
     "Missions de conseil",
@@ -1444,6 +1540,7 @@ const Footer = () => {
           <a href={isHomePage ? "#experience" : "/#experience"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Expérience</a>
           <a href={isHomePage ? "#education" : "/#education"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Formation</a>
           <a href={isHomePage ? "#projects" : "/#projects"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Projets</a>
+          <a href={isHomePage ? "#faq" : "/#faq"} className="hover:text-white hover:underline underline-offset-4 transition-all py-2">FAQ</a>
           <Link to="/blog" className="hover:text-white hover:underline underline-offset-4 transition-all py-2">Blog</Link>
         </div>
         
@@ -1466,6 +1563,7 @@ const Home = () => {
       <Experience />
       <Education />
       <Projects />
+      <FAQ />
       <Contact />
     </main>
   );
