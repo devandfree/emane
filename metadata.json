@@ -1,5 +1,6 @@
 {
   "name": "Steve Emane - Portfolio",
-  "description": "Portfolio professionnel de Steve Emane, IT Business Analyst & BPM Engineer.",
-  "requestFramePermissions": []
+  "description": "Portfolio professionnel de Steve Emane, IT Business Analyst & Process Optimization Consultant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
