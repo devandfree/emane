@@ -126,16 +126,16 @@ const Navbar = () => {
         <motion.div 
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-silver-900 border-b border-silver-400/10"
+          className="md:hidden bg-black/95 backdrop-blur-lg border-b border-silver-400/10 max-h-[85vh] overflow-y-auto"
         >
-          <div className="px-6 py-8 flex flex-col space-y-6">
+          <div className="px-6 py-8 flex flex-col space-y-5">
             {navLinks.map((link) => (
               link.isRoute ? (
                 <Link 
                   key={link.name} 
                   to={link.href} 
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-silver-300"
+                  className="text-lg font-medium text-silver-300 hover:text-white transition-colors py-1"
                 >
                   {link.name}
                 </Link>
@@ -144,12 +144,23 @@ const Navbar = () => {
                   key={link.name} 
                   href={link.href} 
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-silver-300"
+                  className="text-lg font-medium text-silver-300 hover:text-white transition-colors py-1"
                 >
                   {link.name}
                 </a>
               )
             ))}
+            
+            <div className="pt-4 border-t border-silver-400/10">
+              <a
+                href={isHomePage ? "#contact" : "/#contact"}
+                onClick={() => setIsOpen(false)}
+                className="w-full py-3 bg-white text-black text-center font-bold text-sm rounded-sm block hover:bg-silver-200 transition-colors"
+                style={{ minHeight: "44px" }}
+              >
+                Parlons-en
+              </a>
+            </div>
           </div>
         </motion.div>
       )}
@@ -262,7 +273,7 @@ const Navbar = () => {
           </div>
 
           {/* Elegant geometric / pure typographic card list on the right */}
-          <div className="lg:col-span-12 xl:col-span-5 flex flex-col justify-center">
+          <div className="lg:col-span-5 flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.98, x: 15 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -287,7 +298,7 @@ const Navbar = () => {
                     {p.subtitle}
                   </h3>
                   
-                  <p className="text-2xs text-silver-400 leading-relaxed font-light">
+                  <p className="text-[10px] sm:text-xs text-silver-400 leading-relaxed font-light">
                     {p.desc}
                   </p>
                 </div>
@@ -343,7 +354,7 @@ const About = () => {
             {/* Float badge */}
             <div className="absolute -bottom-6 -right-6 w-36 h-36 bg-white flex items-center justify-center p-4 rounded-sm hidden md:flex shadow-2xl">
               <div className="text-black text-center">
-                <span className="block text-2xs font-mono tracking-widest uppercase mb-1 text-black/40">Parcours</span>
+                <span className="block text-[10px] font-mono tracking-widest uppercase mb-1 text-black/40">Parcours</span>
                 <div className="text-4xl font-bold tracking-tighter">4+</div>
                 <div className="text-[10px] font-bold uppercase tracking-widest text-black/80">Ans de conseil</div>
               </div>
@@ -356,7 +367,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-12 xl:col-span-7 lg:pl-6"
+            className="lg:col-span-7 lg:pl-6"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-8 bg-silver-500" />
@@ -867,57 +878,109 @@ const DeliverablesAndResults = () => {
 };
 
 const Experience = () => {
+  const [isCVOpen, setIsCVOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+
   const experiences = [
     {
-      role: "Ingénieur Conception & LIMS Implementer",
-      company: "KB SAP Consulting SARL",
+      role: "Ingénieur Conception / LIMS Implementer",
+      company: "Groupe Kedibuild / KB SAP Consulting SARL",
       period: "Fév. 2026 - Présent",
-      description: "Implémentation, configuration complète et intégration de systèmes de gestion d'informations de laboratoire (LIMS). Optimisation avancée des flux de travail scientifiques et des processus analytiques pour assurer l'excellence opérationnelle et la conformité stricte.",
-      tags: ["LIMS Customization", "Lab Workflows", "Data Integrity", "SOP"]
+      description: "Implémentation et configuration de systèmes LIMS pour optimiser les flux de travail scientifiques et de laboratoires. Analyse fine des besoins utilisateurs et traduction directe en paramétrage fonctionnel et technique du système. Rédaction de spécifications fonctionnelles détaillées, guides d'utilisation et documents de recette d'acceptation. Coordination fluide avec les équipes qualité, terrain et IT pour le respect des standards.",
+      tags: ["LIMS Customization", "BPM", "Flux Lab", "Compliance", "Spécificités"]
     },
     {
-      role: "IT Business Analyst & BPM Engineer",
-      company: "Consulting Indépendant",
-      period: "Depuis 2025",
-      description: "Accompagnement stratégique des PME dans la modélisation de processus, l'établissement de diagnostics opérationnels fins, et la conception de schémas cibles industriels agiles pour réduire immédiatement les coûts et accroître la rentabilité.",
-      tags: ["BPMN 2.0", "Lean Six Sigma", "PME Strategy", "RACI"]
-    },
-    {
-      role: "Business Analyst",
+      role: "IT Business Analyst",
       company: "Dnity Technology Solutions LLC",
       period: "Sept. 2024 - Mai 2025",
-      description: "Analyse approfondie des processus métiers complexes, recueil et spécification fonctionnelle des besoins utilisateurs. Facilitation de la liaison technologique avec l'équipe de développement et formalisation des cas d'utilisation.",
-      tags: ["BABOK Guidelines", "Requirements Engineering", "Functional Specs", "Agile"]
+      description: "Analyse systématique des besoins métiers et modélisation de solutions logicielles d'envergure. Rédaction rigoureuse de spécifications fonctionnelles, user stories et cas d'usage à destination des développeurs. Animation d'ateliers collaboratifs de recueil des processus et d'alignement avec les parties prenantes. Suivi des livrables et gestion agile des priorités.",
+      tags: ["BABOK Guidelines", "Requirements", "User Stories", "Ateliers", "Agile"]
     },
     {
-      role: "Business Analyst Junior",
+      role: "Business Analyst Jr.",
       company: "IIBA Cameroon Chapter",
       period: "Jan. 2024 - Août 2024",
-      description: "Participation active à la standardisation des pratiques d'analyse d'affaires locales, formalisation des processus internes, contribution à l'organisation de sessions professionnelles basées sur le cadre de référence BABOK v3.",
-      tags: ["IIBA Community", "BABOK Study", "Process Documentation"]
+      description: "Participation active aux activités d'analyse d'affaires locales et support à la formalisation logique des processus internes du chapitre. Cartographie des flux de valeur sous BPMN 2.0 pour améliorer la lisibilité opérationnelle. Aide à l'organisation de webinaires professionnels et de sessions d'étude du standard BABOK v3.",
+      tags: ["IIBA Chapter", "BPMN 2.0", "BABOK Study", "Processus", "Gouvernance"]
     },
     {
       role: "Analyste Programmeur",
       company: "Solem SARL",
       period: "Déc. 2021 - Mai 2022",
-      description: "Développement d'interfaces techniques applicatives, formalisation d'analyses de données relationnelles SQL complexes, et correction/maintenance préventive de solutions logicielles d'entreprise.",
-      tags: ["Software Dev", "SQL Databases", "Systems Maintenance"]
+      description: "Conception complète d'applications d'entreprise répondant aux spécifications techniques. Réalisation d'analyses de données, maintenance corrective et évolutive d'outils métiers complexes, et rédaction de dossiers techniques structurés.",
+      tags: ["Software Dev", "SQL Databases", "Systems", "Maintenance"]
     },
     {
       role: "Stage de fin d'études & Professionnel",
       company: "The German House Cameroon SARL",
       period: "Mars 2021 - Nov. 2021",
-      description: "Immersion et soutien technique dans le cadrage et l'analyse de projets informatiques locaux. Traduction fonctionnelle de besoins opérationnels d'étudiants et de professionnels.",
-      tags: ["Acquisition Pro", "Functional Analysis", "User Care"]
-    },
-    {
-      role: "Ingénieur Génie Informatique",
-      company: "Parcours Académique",
-      period: "Formation",
-      description: "Consolidation académique sur la gouvernance des systèmes d'information, les cycles de développement, l'agilité et l'outillage de processus.",
-      tags: ["Enterprise Systems", "GI Standard", "Software Engineering"]
+      description: "Soutien fonctionnel et applicatif sur des projets logicielles agiles au sein d'un écosystème technique international. Recueil d'exigences opérationnelles de base et traduction en cahiers des charges fonctionnels.",
+      tags: ["Functional Analysis", "Immersion Pro", "IT Support", "Cadrage"]
     }
   ];
+
+  const handleCopyCV = () => {
+    const cvText = `EMANE JOVANY LOUIS STEVE
+IT Business Analyst · IT Design Engineer · +3 ans
+Email: steve.emane@outlook.fr | steve.emane97@gmail.com
+Tél: +237 656 579 882
+Localisation: Douala, Cameroun
+LinkedIn: linkedin.com/in/emane-steve
+
+==== PROFIL PROFESSIONNEL ====
+IT Business Analyst spécialisé dans la compréhension des besoins métiers et leur traduction en solutions numériques adaptées. Mon rôle consiste à analyser, concevoir et proposer des options stratégiques qui favorisent l’évolution et l’amélioration continue des systèmes d’information.
+J’interviens au croisement des opérations, des processus et des projets IT, afin d’accompagner les organisations dans leur transformation digitale. Mon expertise repose sur la Business Analysis et le BPM, disciplines qui me permettent de cartographier les processus (As-Is), concevoir des modèles cibles (To-Be), identifier les points de friction et mettre en œuvre des solutions d’optimisation.
+
+==== EXPÉRIENCES PROFESSIONNELLES ====
+* Ingénieur Conception / LIMS Implementer | Groupe Kedibuild / KB SAP Consulting SARL (Fév. 2026 – Présent)
+  - Implémentation et configuration de systèmes LIMS pour optimiser les flux de travail scientifiques et laboratoires
+  - Analyse des besoins utilisateurs et traduction en paramétrage fonctionnel et technique du système
+  - Rédaction des spécifications fonctionnelles, des guides utilisateurs et de la documentation de recette
+  - Coordination avec les équipes qualité, terrain et IT pour garantir la conformité aux standards en vigueur
+
+* IT Business Analyst | Dnity Technology Solutions LLC (Sept. 2024 – Mai 2025)
+  - Analyse des besoins métier et conception de solutions technologiques pour améliorer l’efficacité opérationnelle
+  - Rédaction de spécifications fonctionnelles, user stories et cas d’usage destinés aux équipes de développement
+  - Animation d’ateliers de recueil des besoins et facilitation des sessions de validation avec les parties prenantes
+  - Suivi des livrables, gestion des priorités et reporting d’avancement auprès des responsables de projet
+
+* Business Analyst Jr. | IIBA Cameroon Chapter (Jan. 2024 – Août 2024)
+  - Contribution aux initiatives d’analyse métier et support à la formalisation des processus internes du chapitre
+  - Modélisation de processus en BPMN 2.0 pour renforcer la gouvernance et la lisibilité opérationnelle
+  - Participation à l’organisation d’ateliers de formation et de préparation aux certifications IIBA
+
+* Analyste Programmeur | Solem SARL (Déc. 2021 – Mai 2022)
+  - Conception d’applications logicielles répondant aux besoins fonctionnels identifiés
+  - Analyse technique, maintenance corrective et évolutive des systèmes existants
+  - Rédaction de la documentation technique et fonctionnelle associée aux livrables
+
+* Stage Fin d’Études & Stage Professionnel | The German House Cameroon SARL (Mars – Nov. 2021)
+  - Mise en pratique des compétences d’ingénierie sur des projets concrets en environnement technique international
+  - Immersion professionnelle et contribution active aux projets de l’équipe IT
+
+==== PARCOURS ACADÉMIQUE & FORMATIONS ====
+- Diplôme d’Ingénieur Conception — Génie Informatique | Ecole National Supérieur Polytechnique de Douala (2021)
+- Ingénierie des Processus Métier (BPM) | Formation spécialisée (2026)
+- Préparation Certifications IIBA — ECBA, CCBA & CBAP | IIBA Cameroon Chapter
+- Optimisation & Réingénierie des Processus Métier (BPR) | IIBA Cameroon Chapter
+- Cartographie des Processus Métier — BPMN 2.0 | IIBA Cameroon Chapter
+
+==== COMPÉTENCES ====
+* Savoir-faire: Modélisation (BPMN, UML), Analyse de données & KPI, Optimisation (BPO / BPR), Gestion de projet IT (Agile, Waterfall), Implémentation ERP/CRM/LIMS, Analyse des risques, Conduite du changement.
+* Savoir-être: Esprit analytique, Vulgarisation technique, Autonomie, Collaboration transverse, Pragmatisme.
+* Outils: Power BI, Excel, SQL, JIRA, Confluence, Trello, No-Code & IA.
+* Langues: Français (Très Bien), Anglais (Professionnel)
+`;
+
+    navigator.clipboard.writeText(cvText).then(() => {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    });
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
 
   return (
     <section id="experience" className="py-24 bg-silver-900/10 border-t border-silver-400/10 relative overflow-hidden">
@@ -941,8 +1004,9 @@ const Experience = () => {
 
             {/* Glowing CV Card wrapper */}
             <motion.div 
-              whileHover={{ y: -5 }}
-              className="p-6 bg-silver-900/50 silver-border rounded-sm relative overflow-hidden group silver-glow animate-none"
+              whileHover={{ y: -3 }}
+              onClick={() => setIsCVOpen(true)}
+              className="p-6 bg-silver-900/50 silver-border rounded-sm relative overflow-hidden group silver-glow cursor-pointer"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-white/40 to-transparent" />
               <div className="flex items-start gap-4">
@@ -952,15 +1016,17 @@ const Experience = () => {
                 <div>
                   <h4 className="text-white font-bold text-sm mb-1">Curriculum Vitæ</h4>
                   <p className="text-xs text-silver-400 leading-normal mb-4">
-                    Accédez à mon parcours structuré au format PDF complet pour vos archives ou impressions.
+                    Visualisez, imprimez ou copiez mon parcours complet directement au format de référence.
                   </p>
-                  <a 
-                    href="#" 
-                    className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-silver-400 decoration-1 hover:underline underline-offset-4 transition-all"
+                  <button 
+                    type="button"
+                    onClick={(e) => { e.stopPropagation(); setIsCVOpen(true); }}
+                    className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-silver-400 decoration-1 hover:underline underline-offset-4 transition-all bg-transparent border-none p-0 cursor-pointer"
+                    style={{ minHeight: "44px" }}
                   >
-                    Télécharger le PDF
+                    Ouvrir le Curriculum Vitæ
                     <ChevronRight size={12} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -1043,6 +1109,394 @@ const Experience = () => {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* Curriculum Vitae Full Interactive Modal Overlay */}
+      {isCVOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-2 sm:p-6 overflow-y-auto no-print">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-zinc-950 border border-silver-850/60 rounded-sm w-full max-w-4xl h-[92vh] flex flex-col overflow-hidden shadow-2xl relative"
+          >
+            {/* Modal Top Actions Bar */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-silver-850 bg-silver-950/70 backdrop-blur-md shrink-0">
+              <div className="flex items-center gap-2">
+                <FileText size={16} className="text-white" />
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-white">Curriculum Vitæ Interactif</span>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={handleCopyCV}
+                  className="px-3.5 py-1.5 bg-silver-900 border border-silver-800 text-silver-300 hover:text-white hover:border-silver-600 transition-all text-[10px] font-mono uppercase tracking-widest rounded-sm flex items-center gap-1.5 pointer-events-auto cursor-pointer"
+                  style={{ minHeight: "36px" }}
+                >
+                  {isCopied ? "Copié !" : "Copier brut"}
+                </button>
+                <button
+                  type="button"
+                  onClick={handlePrint}
+                  className="px-3.5 py-1.5 bg-white text-black hover:bg-silver-200 transition-all text-[10px] font-mono uppercase tracking-widest rounded-sm flex items-center gap-1.5 pointer-events-auto cursor-pointer"
+                  style={{ minHeight: "36px" }}
+                >
+                  Imprimer / PDF
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsCVOpen(false)}
+                  className="p-1.5 hover:bg-white/10 rounded-sm text-silver-400 hover:text-white transition-colors flex items-center justify-center pointer-events-auto cursor-pointer bg-transparent border-none"
+                  style={{ minHeight: "36px", minWidth: "36px" }}
+                >
+                  <X size={18} />
+                </button>
+              </div>
+            </div>
+
+            {/* Document Content Box */}
+            <div className="flex-1 overflow-y-auto p-6 md:p-10 text-white select-text">
+              <div className="max-w-3xl mx-auto space-y-10">
+                
+                {/* CV Header */}
+                <div className="text-center pb-8 border-b border-white/10">
+                  <h1 className="text-3xl md:text-4xl font-black tracking-tight text-white mb-2">
+                    EMANE JOVANY LOUIS STEVE
+                  </h1>
+                  <p className="text-sm md:text-base font-bold text-silver-400 font-mono tracking-widest uppercase mb-6">
+                    IT Business Analyst · IT Design Engineer · +3 ans
+                  </p>
+                  
+                  <div className="flex flex-wrap justify-center gap-y-2 gap-x-6 text-[10px] sm:text-xs font-mono text-silver-400">
+                    <span className="hover:text-white transition-colors">✉ steve.emane@outlook.fr</span>
+                    <span className="hover:text-white transition-colors">☎ +237 656 579 882</span>
+                    <span>⌂ Douala, Cameroun</span>
+                    <a href="https://linkedin.com/in/emane-steve" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline underline-offset-2">
+                      in linkedin.com/in/emane-steve
+                    </a>
+                  </div>
+                </div>
+
+                {/* Profil Professionnel */}
+                <div className="space-y-4">
+                  <h2 className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-silver-400 flex items-center gap-2">
+                    <span className="h-px w-4 bg-silver-500" /> Profil Professionnel
+                  </h2>
+                  <p className="text-xs md:text-sm text-silver-300 leading-relaxed font-light text-justify">
+                    IT Business Analyst spécialisé dans la compréhension des besoins métiers et leur traduction en solutions numériques
+                    adaptées. Mon rôle consiste à analyser, concevoir et proposer des options stratégiques qui favorisent l’évolution et
+                    l’amélioration continue des systèmes d’information.
+                  </p>
+                  <p className="text-xs md:text-sm text-silver-300 leading-relaxed font-light text-justify">
+                    J’interviens au croisement des opérations, des processus et des projets IT, afin d’accompagner les organisations dans leur
+                    transformation digitale. Mon expertise repose sur la Business Analysis et le BPM, disciplines qui me permettent de
+                    cartographier les processus (As-Is), concevoir des modèles cibles (To-Be), identifier les points de friction et mettre en œuvre
+                    des solutions d'optimisation.
+                  </p>
+                  <p className="text-xs md:text-sm text-silver-300 leading-relaxed font-light text-justify">
+                    Au-delà de l’analyse, j’accompagne les équipes dans la conduite du changement, en facilitant l’adoption des nouveaux outils
+                    et en renforçant l’alignement entre les besoins métiers et les solutions technologiques. Mon objectif est de créer un pont
+                    durable entre les utilisateurs et l’IT, en garantissant des solutions pragmatiques, efficaces et pérennes.
+                  </p>
+                </div>
+
+                {/* Expériences */}
+                <div className="space-y-6">
+                  <h2 className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-silver-400 flex items-center gap-2 pb-2 border-b border-white/5">
+                    <span className="h-px w-4 bg-silver-500" /> Expériences Professionnelles
+                  </h2>
+
+                  <div className="space-y-6">
+                    <div className="space-y-2">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                        <h3 className="text-sm font-bold text-white uppercase tracking-tight">
+                          Ingénieur Conception / LIMS Implementer
+                        </h3>
+                        <span className="text-[10px] font-mono text-silver-500">Fév. 2026 – Présent</span>
+                      </div>
+                      <p className="text-[11px] font-bold text-silver-400 font-mono">
+                        Groupe Kedibuild / KB SAP Consulting SARL — Cameroun
+                      </p>
+                      <ul className="list-disc list-inside text-xs text-silver-300 space-y-1.5 font-light pl-2">
+                        <li>Implémentation et configuration de systèmes LIMS pour optimiser les flux de travail scientifiques et laboratoires.</li>
+                        <li>Analyse des besoins utilisateurs et traduction en paramétrage fonctionnel et technique du système.</li>
+                        <li>Rédaction des spécifications fonctionnelles, des guides utilisateurs et de la documentation de recette.</li>
+                        <li>Coordination avec les équipes qualité, terrain et IT pour garantir la conformité aux standards en vigueur.</li>
+                      </ul>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                        <h3 className="text-sm font-bold text-white uppercase tracking-tight">
+                          IT Business Analyst
+                        </h3>
+                        <span className="text-[10px] font-mono text-silver-500">Sept. 2024 – Mai 2025</span>
+                      </div>
+                      <p className="text-[11px] font-bold text-silver-400 font-mono">
+                        Dnity Technology Solutions LLC
+                      </p>
+                      <ul className="list-disc list-inside text-xs text-silver-300 space-y-1.5 font-light pl-2">
+                        <li>Analyse des besoins métier et conception de solutions technologiques pour améliorer l’efficacité opérationnelle.</li>
+                        <li>Rédaction de spécifications fonctionnelles, user stories et cas d’usage destinés aux équipes de développement.</li>
+                        <li>Animation d’ateliers de recueil des besoins et facilitation des sessions de validation avec les parties prenantes.</li>
+                        <li>Suivi des livrables, gestion des priorités et reporting d’avancement auprès des responsables de projet.</li>
+                      </ul>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                        <h3 className="text-sm font-bold text-white uppercase tracking-tight">
+                          Business Analyst Jr.
+                        </h3>
+                        <span className="text-[10px] font-mono text-silver-500">Jan. 2024 – Août 2024</span>
+                      </div>
+                      <p className="text-[11px] font-bold text-silver-400 font-mono">
+                        IIBA Cameroon Chapter — Cameroun
+                      </p>
+                      <ul className="list-disc list-inside text-xs text-silver-300 space-y-1.5 font-light pl-2">
+                        <li>Contribution aux initiatives d’analyse métier et support à la formalisation des processus internes du chapitre.</li>
+                        <li>Modélisation de processus en BPMN 2.0 pour renforcer la gouvernance et la lisibilité opérationnelle.</li>
+                        <li>Participation à l’organisation d’ateliers de formation et de préparation aux certifications IIBA.</li>
+                      </ul>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                        <h3 className="text-sm font-bold text-white uppercase tracking-tight">
+                          Analyste Programmeur
+                        </h3>
+                        <span className="text-[10px] font-mono text-silver-500">Déc. 2021 – Mai 2022</span>
+                      </div>
+                      <p className="text-[11px] font-bold text-silver-400 font-mono">
+                        Solem SARL — Cameroun
+                      </p>
+                      <ul className="list-disc list-inside text-xs text-silver-300 space-y-1.5 font-light pl-2">
+                        <li>Conception d’applications logicielles répondant aux besoins fonctionnels identifiés.</li>
+                        <li>Analyse technique, maintenance corrective et évolutive des systèmes existants.</li>
+                        <li>Rédaction de la documentation technique et fonctionnelle associée aux livrables.</li>
+                      </ul>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                        <h3 className="text-sm font-bold text-white uppercase tracking-tight">
+                          Stage Fin d’Études & Stage Professionnel
+                        </h3>
+                        <span className="text-[10px] font-mono text-silver-500">Mars – Nov. 2021</span>
+                      </div>
+                      <p className="text-[11px] font-bold text-silver-400 font-mono">
+                        The German House Cameroon SARL — Cameroun
+                      </p>
+                      <ul className="list-disc list-inside text-xs text-silver-300 space-y-1.5 font-light pl-2">
+                        <li>Mise en pratique des compétences d’ingénierie sur des projets concrets en environnement technique international.</li>
+                        <li>Immersion professionnelle et contribution active aux projets de l’équipe IT.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Formations */}
+                <div className="space-y-6">
+                  <h2 className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-silver-400 flex items-center gap-2 pb-2 border-b border-white/5">
+                    <span className="h-px w-4 bg-silver-500" /> Parcours Académique & Formations
+                  </h2>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-silver-300">
+                    <div className="space-y-1">
+                      <div className="flex justify-between font-mono font-bold text-white">
+                        <span>Diplôme d’Ingénieur Conception</span>
+                        <span className="text-silver-500">2021</span>
+                      </div>
+                      <p className="text-silver-400 font-light">Génie Informatique — Ecole Polytechnique de Douala</p>
+                      <p className="text-[10px] text-silver-500 font-light">Génie logiciel, SI, réseaux et méthodes de dev.</p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between font-mono font-bold text-white">
+                        <span>Ingénierie des Processus Métier</span>
+                        <span className="text-silver-500">2026</span>
+                      </div>
+                      <p className="text-silver-400 font-light">Formation spécialisée avancée</p>
+                      <p className="text-[10px] text-silver-500 font-light">Conception, exécution et pilotage des flux.</p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between font-mono font-bold text-white">
+                        <span>Certifications IIBA (Préparation)</span>
+                        <span className="text-silver-500">Cursus</span>
+                      </div>
+                      <p className="text-silver-400 font-light">ECBA, CCBA & CBAP — IIBA Chapter</p>
+                      <p className="text-[10px] text-silver-500 font-light">Cadrage stratégique, BABOK Guide v3 complet.</p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="flex justify-between font-mono font-bold text-white">
+                        <span>Optimisation Processus (BPR)</span>
+                        <span className="text-silver-500">Expertise</span>
+                      </div>
+                      <p className="text-silver-400 font-light">Formation continue — IIBA Chapter</p>
+                      <p className="text-[10px] text-silver-500 font-light">Refonte opérationnelle et élimination des gaspillages.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Grid Compétences */}
+                <div className="space-y-6 pb-6">
+                  <h2 className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-silver-400 flex items-center gap-2 pb-2 border-b border-white/5">
+                    <span className="h-px w-4 bg-silver-500" /> Grille de Compétences
+                  </h2>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-xs text-silver-300">
+                    <div className="space-y-2">
+                      <h4 className="font-bold text-white uppercase tracking-wider font-mono text-[10px] text-silver-400">Savoir-faire</h4>
+                      <ul className="space-y-1 list-none font-light text-[11px] leading-relaxed">
+                        <li>• Modélisation BPMN, UML</li>
+                        <li>• Analyse de données & KPI</li>
+                        <li>• Amélioration continue BPO</li>
+                        <li>• ERP, CRM, LIMS Systems</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="font-bold text-white uppercase tracking-wider font-mono text-[10px] text-silver-400">Savoir-être</h4>
+                      <ul className="space-y-1 list-none font-light text-[11px] leading-relaxed">
+                        <li>• Analyse & Esprit de synthèse</li>
+                        <li>• Vulgarisation technique</li>
+                        <li>• Autonomie & Rigueur</li>
+                        <li>• Pragmatisme opérationnel</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="font-bold text-white uppercase tracking-wider font-mono text-[10px] text-silver-400">Outils</h4>
+                      <ul className="space-y-1 list-none font-light text-[11px] leading-relaxed">
+                        <li>• Power BI, Excel, SQL</li>
+                        <li>• JIRA, Confluence, Trello</li>
+                        <li>• Agile SCRUM / Kanban</li>
+                        <li>• No-Code & GenAI</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="font-bold text-white uppercase tracking-wider font-mono text-[10px] text-silver-400">Langues & Intérêts</h4>
+                      <ul className="space-y-1 list-none font-light text-[11px] leading-relaxed">
+                        <li>• Français (Très Bien)</li>
+                        <li>• Anglais (Professionnel)</li>
+                        <li>• R&D, Automatisation</li>
+                        <li>• Optimisation Agile</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* Embedded print CV structure to support standard print styles cleanly */}
+      <div id="cv-print-area" className="hidden print-only bg-white text-black p-10 font-sans leading-relaxed text-sm">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="border-b-2 border-black pb-4 text-center">
+            <h1 className="text-3xl font-bold uppercase tracking-wide">EMANE JOVANY LOUIS STEVE</h1>
+            <p className="text-lg font-bold text-gray-700 tracking-widest mt-1">IT Business Analyst · IT Design Engineer · +3 ans d'expérience</p>
+            <p className="text-xs text-gray-500 mt-2 font-mono">steve.emane@outlook.fr | +237 656 579 882 | Douala, Cameroun | linkedin.com/in/emane-steve</p>
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-sm font-bold uppercase tracking-wider border-b border-black pb-1">Profil Professionnel</h2>
+            <p className="text-xs text-justify">
+              IT Business Analyst spécialisé dans la compréhension des besoins métiers et leur traduction en solutions numériques adaptées. Mon rôle consiste à analyser, concevoir et proposer des options stratégiques qui favorisent l’évolution et l’amélioration continue des systèmes d’information.
+              J’interviens au croisement des opérations, des processus et des projets IT, afin d’accompagner les organisations dans leur transformation digitale.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider border-b border-black pb-1">Expériences Professionnelles</h2>
+            
+            <div className="space-y-3 text-xs">
+              <div>
+                <div className="flex justify-between font-bold">
+                  <span>Ingénieur Conception / LIMS Implementer — Groupe Kedibuild / KB SAP Consulting</span>
+                  <span>Fév. 2026 – Présent</span>
+                </div>
+                <ul className="list-disc list-inside pl-2 space-y-0.5 mt-1 text-gray-700">
+                  <li>Implémentation et configuration de systèmes LIMS pour optimiser les flux de travail scientifiques et de laboratoires.</li>
+                  <li>Analyse des besoins utilisateurs et traduction en paramétrage fonctionnel et technique du système.</li>
+                  <li>Rédaction des spécifications fonctionnelles, guides utilisateurs et rédaction de documentation de recette.</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="flex justify-between font-bold">
+                  <span>IT Business Analyst — Dnity Technology Solutions LLC</span>
+                  <span>Sept. 2024 – Mai 2025</span>
+                </div>
+                <ul className="list-disc list-inside pl-2 space-y-0.5 mt-1 text-gray-700">
+                  <li>Analyse des besoins métier et conception de solutions technologiques pour l'efficacité opérationnelle.</li>
+                  <li>Rédaction de spécifications fonctionnelles, user stories et cas d’usage pour les développeurs.</li>
+                  <li>Animation d’ateliers de recueil et facilitation de sessions de validation.</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="flex justify-between font-bold">
+                  <span>Business Analyst Jr. — IIBA Cameroon Chapter</span>
+                  <span>Jan. 2024 – Août 2024</span>
+                </div>
+                <ul className="list-disc list-inside pl-2 space-y-0.5 mt-1 text-gray-700">
+                  <li>Modélisation de processus en BPMN 2.0 pour renforcer la gouvernance et le pilotage des processus.</li>
+                  <li>Participation active aux webinaires et à la préparation aux certifications de l'IIBA.</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="flex justify-between font-bold">
+                  <span>Analyste Programmeur — Solem SARL</span>
+                  <span>Déc. 2021 – Mai 2022</span>
+                </div>
+                <ul className="list-disc list-inside pl-2 space-y-0.5 mt-1 text-gray-700">
+                  <li>Conception d’applications logicielles répondant aux besoins fonctionnels identifiés.</li>
+                  <li>Analyse SQL, maintenance de systèmes et rédaction de dossiers techniques d'exploitation.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider border-b border-black pb-1">Parcours Académique & Formations</h2>
+            <div className="grid grid-cols-2 gap-4 text-xs">
+              <div>
+                <p className="font-bold">Diplôme d’Ingénieur Conception — Génie Informatique (2021)</p>
+                <p className="text-gray-650">Ecole National Supérieur Polytechnique de Douala</p>
+              </div>
+              <div>
+                <p className="font-bold">Ingénierie des Processus Métier (BPM) (2026)</p>
+                <p className="text-gray-650">Formation spécialisée et pilotage des flux d'entreprise</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider border-b border-black pb-1">Compétences Clés</h2>
+            <div className="grid grid-cols-4 gap-4 text-xs">
+              <div>
+                <p className="font-bold">Savoir-faire</p>
+                <p className="text-gray-600">BPMN 2.0, UML, KPIs, BPR, Conduite du changement, ERP/LIMS</p>
+              </div>
+              <div>
+                <p className="font-bold">Savoir-être</p>
+                <p className="text-gray-600">Esprit analytique, Vulgarisation technique, Rigueur, Autonomie</p>
+              </div>
+              <div>
+                <p className="font-bold">Outils</p>
+                <p className="text-gray-650">Power BI, Excel, SQL, JIRA, Confluence, Trello, No-Code & IA</p>
+              </div>
+              <div>
+                <p className="font-bold">Langues</p>
+                <p className="text-gray-650">Français (Très Bien), Anglais (Savoir-faire pro)</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1410,8 +1864,8 @@ const Contact = () => {
     <section id="contact" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-white text-black p-8 sm:p-12 md:p-20 rounded-sm silver-glow flex flex-col lg:flex-row justify-between items-center gap-12">
-          <div className="max-w-xl text-center md:text-left">
-            <div className="flex justify-center md:justify-start items-center gap-2 mb-4">
+          <div className="max-w-xl text-center lg:text-left">
+            <div className="flex justify-center lg:justify-start items-center gap-2 mb-4">
               <span className="h-px w-6 bg-black" />
               <span className="text-[10px] font-bold uppercase tracking-widest text-black/60 font-mono">Collaboration &amp; Synergie</span>
             </div>
@@ -1423,11 +1877,11 @@ const Contact = () => {
               Discutons de vos enjeux de performance et de la manière dont je peux vous accompagner dans votre transformation opérationnelle.
             </p>
             
-            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
               {collaborations.map((col, index) => (
                 <span 
                   key={index} 
-                  className="text-2xs font-bold uppercase tracking-widest px-3 py-1.5 bg-black/5 text-black hover:bg-black/10 transition-colors border border-black/10 rounded-sm font-mono"
+                  className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 bg-black/5 text-black hover:bg-black/10 transition-colors border border-black/10 rounded-sm font-mono"
                 >
                   • {col}
                 </span>
@@ -1440,7 +1894,7 @@ const Contact = () => {
               <Mail size={18} className="mr-3" />
               Me contacter par email
             </a>
-            <div className="flex justify-center md:justify-start space-x-6 pt-6 border-t border-black/10">
+            <div className="flex justify-center lg:justify-start space-x-6 pt-6 border-t border-black/10">
               <a href="https://cm.linkedin.com/in/emane-steve" className="text-black hover:text-silver-600 transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={22} />
               </a>
