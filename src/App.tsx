@@ -155,177 +155,151 @@ const Navbar = () => {
       )}
     </nav>
   );
-};
-
-const Hero = () => {
-  const corePillars = [
+};const Hero = () => {
+  const pillars = [
     {
-      step: "01",
-      title: "Business Goals",
-      desc: "Identifier les objectifs stratégiques et priorités de la direction d’affaires.",
-      tag: "Vision",
-      active: true
+      num: "01",
+      title: "Business Alignment",
+      subtitle: "Alignement Stratégique",
+      desc: "Traduire vos objectifs d'affaires en exigences claires et opérationnelles pour vos équipes métier et techniques."
     },
     {
-      step: "02",
-      title: "Business Needs",
-      desc: "Capturer les besoins fonctionnels précis et analyser l'écosystème d'écarts.",
-      tag: "Cadrage",
-      active: true
+      num: "02",
+      title: "Process Optimization",
+      subtitle: "Modélisation & Flux",
+      desc: "Chasser le gaspillage par l'analyse systématique et la cartographie au standard international BPMN 2.0."
     },
     {
-      step: "03",
-      title: "BPM & Solutions IT",
-      desc: "Modéliser sous BPMN 2.0, rationaliser les flux et aligner les systèmes logiciels.",
-      tag: "Exécution",
-      active: true
+      num: "03",
+      title: "Change Management",
+      subtitle: "Conduite du Changement",
+      desc: "Sécuriser la transition technologique en accompagnant l'humain grâce à la méthode ADKAR."
     }
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-black pt-28 pb-16 px-6 overflow-hidden">
-      {/* Grid Pattern & Ambient Mask */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_80%,transparent_100%)]" />
+    <section className="relative min-h-screen flex flex-col justify-center bg-black pt-32 pb-20 px-6 overflow-hidden">
+      {/* Subtle lines representing a delicate minimalist structural grid */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute inset-y-0 left-1/4 w-px bg-white/[0.01] pointer-events-none hidden lg:block" />
+      <div className="absolute inset-y-0 right-1/4 w-px bg-white/[0.01] pointer-events-none hidden lg:block" />
       
-      {/* Floating abstract glowing orbs */}
-      <div className="absolute top-[10%] right-[15%] w-96 h-96 bg-white/[0.015] rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[10%] w-[500px] h-[500px] bg-amber-500/[0.01] rounded-full blur-[120px] pointer-events-none" />
+      {/* Masterfully soft background glow to prevent heavy contrast glare and maintain elegance */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/[0.012] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* Left Main Content */}
+          {/* Main textual column on the left */}
           <div className="lg:col-span-7 flex flex-col">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-8"
+              className="flex items-center gap-3.5 mb-8"
             >
-              <span className="h-px w-8 bg-amber-500" />
-              <span className="text-[10px] sm:text-xs font-bold tracking-[0.4em] uppercase text-amber-500 font-mono">
-                IT Business Analyst &amp; Process Optimization Consultant
+              <span className="w-1.5 h-1.5 bg-silver-400 rounded-full animate-pulse" />
+              <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.4em] uppercase text-silver-500">
+                Steve Emane — Conseil d'affaires
               </span>
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-white tracking-tighter leading-[0.9] mb-10 font-display"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.8rem] font-medium leading-[0.95] tracking-tighter text-white font-display mb-10"
             >
-              Aligner <br />
-              pour <span className="text-transparent bg-clip-text bg-gradient-to-r from-silver-100 via-silver-400 to-amber-500 font-bold">exécuter</span>.
+              Penser les flux. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-silver-100 via-silver-400 to-silver-600 font-bold">Architecturer</span> <br />
+              la performance.
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-silver-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-12"
+              className="text-silver-400 text-base md:text-lg font-light leading-relaxed max-w-xl mb-12"
             >
-              J’accompagne les organisations dans l’alignement de leurs objectifs stratégiques (<b>Business Goals</b>), de leurs besoins opérationnels (<b>Business Needs</b>) et de leurs processus métier afin d’améliorer leur performance globale et d'éliminer les inefficacités.
+              Consultant indépendant et facilitateur d’excellence. Je sécurise la capacité d’exécution des organisations en alignant besoins métier (<b>Business Needs</b>) et architectures technologiques.
             </motion.p>
 
-            {/* Action buttons with animated layout */}
+            {/* Premium, ultra-clean call-to-actions */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 mb-16"
+              className="flex flex-wrap gap-4 mb-20"
             >
               <a 
                 href="#contact" 
-                className="group relative px-8 py-4 bg-white text-black font-semibold uppercase text-xs tracking-widest hover:bg-silver-200 transition-all flex items-center justify-center rounded-sm"
+                className="group px-7 py-3.5 bg-white text-black text-xs font-semibold uppercase tracking-widest hover:bg-silver-150 transition-all rounded-sm flex items-center justify-center border border-white"
               >
-                Parlons de vos enjeux
-                <ChevronRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                Cadrer un projet
+                <ArrowRight size={13} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
               
               <a 
                 href="#challenges" 
-                className="px-8 py-4 border border-silver-800 text-silver-300 hover:text-white hover:border-silver-600 transition-all uppercase text-xs tracking-widest text-center rounded-sm bg-black/40 backdrop-blur-sm"
+                className="px-7 py-3.5 border border-silver-850 hover:border-silver-600 text-silver-400 hover:text-white transition-all uppercase text-xs tracking-widest text-center rounded-sm bg-silver-950/20 backdrop-blur-sm"
               >
-                Explorer ma démarche
+                Consulter ma démarche
               </a>
             </motion.div>
 
-            {/* Micro Tags representation of standards */}
+            {/* Subtle row of frameworks */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="flex flex-wrap gap-2 items-center"
+              className="flex flex-wrap gap-x-6 gap-y-2 items-center text-[10px] font-mono text-silver-600 uppercase tracking-widest"
             >
-              <span className="text-[10px] font-mono text-silver-500 uppercase tracking-wider mr-2">Standards &amp; Pratiques :</span>
-              {["BABOK Guide", "BPMN 2.0", "Lean Six Sigma", "Agile SCRUM"].map((tag, idx) => (
-                <span 
-                  key={idx} 
-                  className="text-[10px] font-mono border border-silver-900 bg-silver-950/40 text-silver-400 px-2.5 py-1 rounded-sm"
-                >
-                  {tag}
-                </span>
-              ))}
+              <span>Certifications &amp; Standards :</span>
+              <span className="text-white hover:text-silver-300 transition-colors">BABOK v3</span>
+              <span className="text-white hover:text-silver-300 transition-colors">BPMN 2.0</span>
+              <span className="text-white hover:text-silver-300 transition-colors">Lean Six Sigma</span>
             </motion.div>
           </div>
 
-          {/* Right Visual Dashboard Simulation */}
-          <div className="lg:col-span-5 h-full w-full">
+          {/* Elegant geometric / pure typographic card list on the right */}
+          <div className="lg:col-span-12 xl:col-span-5 flex flex-col justify-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, x: 20 }}
+              initial={{ opacity: 0, scale: 0.98, x: 15 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-              className="relative p-6 md:p-8 bg-silver-900/10 border border-silver-850/50 rounded-sm overflow-hidden backdrop-blur-md silver-glow"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-4"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/[0.03] rounded-full blur-[80px] pointer-events-none" />
-              
-              {/* Header simulation of process engine */}
-              <div className="flex justify-between items-center mb-10 pb-4 border-b border-white/5">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-[10px] font-mono tracking-widest text-silver-400 uppercase">SYS_ALIGNMENT_ENGINE_V3</span>
-                </div>
-                <div className="text-[9px] font-mono text-silver-500 bg-silver-950 border border-silver-900 px-2 py-0.5 rounded-sm">
-                  ACTIVE_CONSULTING
-                </div>
-              </div>
-
-              {/* Steps workflow visualizer */}
-              <div className="space-y-8 relative">
-                {/* Vertical process line */}
-                <div className="absolute left-[15px] top-[16px] bottom-[16px] w-[1px] bg-gradient-to-b from-amber-500 via-silver-600 to-silver-850" />
-
-                {corePillars.map((pillar) => (
-                  <div key={pillar.step} className="flex gap-4 relative group">
-                    {/* Ring dot indicator */}
-                    <div className="w-8 h-8 rounded-full border border-silver-700 bg-silver-950 flex items-center justify-center font-mono text-2xs font-bold text-white z-10 transition-colors duration-300 group-hover:border-amber-500">
-                      {pillar.step}
-                    </div>
-
-                    <div className="flex-1 bg-white/[0.02] border border-white/[0.03] p-4 rounded-sm hover:border-white/10 transition-all duration-350">
-                      <div className="flex justify-between items-center mb-1">
-                        <h4 className="text-white text-xs font-bold tracking-wide uppercase font-mono">
-                          {pillar.title}
-                        </h4>
-                        <span className="text-[9px] font-mono uppercase bg-amber-500/10 text-amber-500 px-1.5 py-0.2 rounded-sm">
-                          {pillar.tag}
-                        </span>
-                      </div>
-                      <p className="text-2xs text-silver-405 leading-normal font-light">
-                        {pillar.desc}
-                      </p>
-                    </div>
+              {pillars.map((p, idx) => (
+                <div 
+                  key={idx}
+                  className="p-6 bg-silver-950/5 border border-silver-900/40 rounded-sm hover:border-silver-800 hover:bg-silver-950/20 transition-all duration-300 group"
+                >
+                  <div className="flex justify-between items-baseline mb-3">
+                    <span className="text-[10px] font-mono text-silver-500 group-hover:text-silver-400 transition-colors">
+                      {p.num} — {p.title}
+                    </span>
+                    <span className="text-[9px] font-mono uppercase bg-silver-900/30 text-silver-400 px-2 py-0.5 rounded-sm">
+                      MÉTHODE
+                    </span>
                   </div>
-                ))}
-              </div>
-
-              {/* Interactive micro badge showing KPI connection */}
-              <div className="mt-8 pt-6 border-t border-white/5 flex justify-between items-center text-[10px] font-mono text-silver-500">
-                <div className="flex items-center gap-1.5">
-                  <Activity size={12} className="text-amber-500" />
-                  <span>Objectif final : <b>Impact ROI maximum</b></span>
+                  
+                  <h3 className="text-sm font-bold text-white tracking-tight uppercase mb-2 font-display">
+                    {p.subtitle}
+                  </h3>
+                  
+                  <p className="text-2xs text-silver-400 leading-relaxed font-light">
+                    {p.desc}
+                  </p>
                 </div>
-                <span className="text-silver-300 underline underline-offset-2">En savoir plus</span>
+              ))}
+              
+              {/* Ultra-subtle visual connection indicator */}
+              <div className="pt-2 px-1 flex justify-between items-center text-[9px] font-mono text-silver-600">
+                <span className="flex items-center gap-1">
+                  <span className="w-1 h-1 bg-green-500 rounded-full animate-ping" />
+                  Prêt pour collaboration agile
+                </span>
+                <span>© 2026 EMANE.PRO</span>
               </div>
             </motion.div>
           </div>
@@ -333,17 +307,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Background Accent Text */}
-      <div className="absolute -bottom-10 -right-10 pointer-events-none select-none opacity-[0.02]">
-        <h2 className="text-[30vw] font-black leading-none text-white whitespace-nowrap tracking-tighter">
-          ALIGN.
-        </h2>
-      </div>
-
-      {/* Side Label */}
-      <div className="absolute left-10 bottom-20 hidden lg:block rotate-90 origin-left">
-        <span className="text-[10px] font-mono tracking-[0.5em] text-silver-600 uppercase">
-          Steve Emane — ©2026
+      {/* Exquisite side typography annotation */}
+      <div className="absolute left-6 bottom-16 hidden lg:block rotate-90 origin-left">
+        <span className="text-[10px] font-mono tracking-[0.6em] text-silver-700 uppercase">
+          STEVE EMANE • PORTFOLIO
         </span>
       </div>
     </section>
