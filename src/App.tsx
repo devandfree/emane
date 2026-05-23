@@ -584,7 +584,7 @@ const Expertise = () => {
         "Cartographies macro-opérationnelles & micro-flux",
         "Standard Operating Procedures (SOP)"
       ],
-      tools: ["BPMN 2.0", "Lucidchart", "Signavio / Camunda"]
+      tools: ["BPMN 2.0", "Bizagi", "Signavio / Camunda"]
     },
     {
       id: "03",
