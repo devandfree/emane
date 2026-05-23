@@ -355,8 +355,8 @@ const About = () => {
             <div className="absolute -bottom-6 -right-6 w-36 h-36 bg-white flex items-center justify-center p-4 rounded-sm hidden md:flex shadow-2xl">
               <div className="text-black text-center">
                 <span className="block text-[10px] font-mono tracking-widest uppercase mb-1 text-black/40">Parcours</span>
-                <div className="text-4xl font-bold tracking-tighter">4+</div>
-                <div className="text-[10px] font-bold uppercase tracking-widest text-black/80">Ans de conseil</div>
+                <div className="text-4xl font-bold tracking-tighter">3+</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-black/80">Ans Pro</div>
               </div>
             </div>
           </motion.div>
