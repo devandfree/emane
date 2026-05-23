@@ -1796,21 +1796,27 @@ const FAQ = () => {
       {/* Visual ornaments supporting the high-profile mood */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.005] rounded-full blur-[120px] pointer-events-none" />
       
-      <div className="max-w-4xl mx-auto px-6 relative z-10 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.02] border border-white/5 rounded-sm mb-4">
-            <HelpCircle size={13} className="text-amber-500" />
-            <span className="text-[10px] font-bold text-silver-400 uppercase tracking-[0.2em] font-mono">FAQ • Réponses d'expert</span>
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        {/* Aligned 12-column Grid Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-silver-500" />
+              <span className="text-xs font-bold text-silver-400 uppercase tracking-[0.3em] font-mono">FAQ • Réponses d'expert</span>
+            </div>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-white tracking-tighter leading-tight">
+              Questions <br />Fréquentes
+            </h3>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-white mb-6">
-            Questions Fréquentes
-          </h2>
-          <p className="text-silver-400 text-sm md:text-base font-light leading-relaxed">
-            Comprendre la valeur de l'alignement stratégique et de la réingénierie des processus au service de la performance de votre organisation.
-          </p>
+          <div className="lg:col-span-7 lg:pl-12 lg:border-l border-silver-400/10 pt-4 lg:pt-0">
+            <p className="text-silver-400 text-lg md:text-xl font-light leading-relaxed">
+              Comprendre la valeur de l'alignement stratégique et de la réingénierie des processus au service de la performance de votre organisation.
+            </p>
+          </div>
         </div>
 
-        <div className="space-y-4">
+        {/* Accordions container - Centered and elegant max-w-4xl for readability */}
+        <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -1825,10 +1831,10 @@ const FAQ = () => {
                   style={{ minHeight: "44px" }}
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm md:text-base font-bold text-white group-hover:text-amber-400 transition-colors tracking-tight font-display">
+                  <span className="text-sm md:text-base font-bold text-white group-hover:text-silver-300 transition-colors tracking-tight font-display">
                     {faq.question}
                   </span>
-                  <div className={`p-1 bg-white/[0.03] border border-white/5 rounded-sm text-silver-400 group-hover:text-white group-hover:bg-white/[0.08] transition-all flex-shrink-0 duration-300 ${isOpen ? 'rotate-180 text-amber-500 border-amber-500/10' : ''}`}>
+                  <div className={`p-1 bg-white/[0.03] border border-white/5 rounded-sm text-silver-400 group-hover:text-white group-hover:bg-white/[0.08] transition-all flex-shrink-0 duration-300 ${isOpen ? 'rotate-180 text-white border-white/20' : ''}`}>
                     <ChevronDown size={16} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                   </div>
                 </button>
@@ -1839,7 +1845,7 @@ const FAQ = () => {
                   transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-6 md:pb-7 text-xs md:text-sm text-silver-400 leading-relaxed font-light border-l-2 border-amber-500/40 ml-6 pl-4 pt-2 pb-2">
+                  <div className="px-6 pb-6 md:pb-7 text-xs md:text-sm text-silver-300 leading-relaxed font-light border-l-2 border-silver-500 ml-6 pl-4 pt-2 pb-2">
                     {faq.answer}
                   </div>
                 </motion.div>
